@@ -16,8 +16,9 @@
 
 
 <div class="curriculum">
-<div class="fila titulo  titulo02" style="padding-bottom:0px; display:block;  text-align:center;"><h2>Curriculum Vitae</h2></div>
-<div class="fila  titulo " style="padding-bottom:10px; display:block;  text-align:center;"><h1 style="font-size:17px;"><?PHP echo $general['nombres'];?></h1> </div>
+<div class="fila titulo  titulo02" style="padding-bottom:0px; display:block;  text-align:center;">
+  <h2>&nbsp; </h2></div>
+<div class="fila  titulo " style="padding-bottom:10px; display:block;  text-align:center;"><h1 style="font-size:17px;"><a href="<?PHP echo site_url('candidatos/informacion_general');?>" class="titulo_cv_01"><?PHP echo $general['nombres'];?></a></h1> </div>
 <div class="bloque">
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -59,7 +60,7 @@ $h=tmp($general['distrito']);
 </div>
 </div>
 
-<h2>Formaci&oacute;n Acad&eacute;mica</h2>
+<h2><a href="<?PHP echo site_url('formacion');?>" class="titulo_cv_01">Formaci&oacute;n Acad&eacute;mica</a></h2>
 
 
 
@@ -93,7 +94,7 @@ No has  ingresado ninguna informaci&oacute;n sobre tu formaci&oacute;n acad&eacu
 
 
 
-<h2>Experiencia laboral</h2>
+<h2><a href="<?PHP echo site_url('experiencia');?>" class="titulo_cv_01">Experiencia laboral</a></h2>
 
 
 
@@ -139,7 +140,7 @@ $meses[5]='Avanzado';
 
 ?>
 
-<h2>Inform&aacute;tica</h2>
+<h2><a href="<?PHP echo site_url('informatica');?>" class="titulo_cv_01">Inform&aacute;tica</a></h2>
 <div class="bloque">
 
 <!--
@@ -182,7 +183,7 @@ endif;
 
 
 
-<h2>Idiomas</h2>
+<h2><a href="<?PHP echo site_url('idioma');?>" class="titulo_cv_01">Idiomas</a></h2>
 
 <div class="bloque">
 
