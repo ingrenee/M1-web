@@ -15,3 +15,4 @@ ERROR - 2012-07-09 10:42:56 --> Severity: Notice  --> Undefined variable: opcion
 ERROR - 2012-07-09 10:42:56 --> Severity: Notice  --> Undefined variable: opciones F:\wamp\www\Bolsa2011\sistema\application\web\views\home.php 477
 ERROR - 2012-07-09 10:42:56 --> Severity: Notice  --> Undefined variable: opciones F:\wamp\www\Bolsa2011\sistema\application\web\views\home.php 495
 ERROR - 2012-07-09 11:00:05 --> Severity: Notice  --> Undefined variable: tipo F:\wamp\www\Bolsa2011\sistema\application\web\helpers\my_mensajes_helper.php 12
+ERROR - 2012-07-09 11:46:15 --> Severity: Notice  --> A session had already been started - ignoring session_start() F:\wamp\www\Bolsa2011\sistema\system\libraries\native_session.php 144

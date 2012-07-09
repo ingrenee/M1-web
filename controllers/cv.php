@@ -97,7 +97,42 @@ header("Content-Type: application/vnd.ms-word");
 		
 		
 		
+		function web($usuario=false)
+		{
+			$data=array();
 		
+	
+			$id=$this->uri->segment(2);
+		
+		if(false):
+		$data=$this->lib_usuarios->obtener_info($id);
+
+		$data['general']=$this->lib_usuarios->cv_general($id);	
+		$data['formacion']=$this->lib_usuarios->cv_formacion($id);
+		$data['experiencia']=$this->lib_usuarios->cv_experiencia($id);		
+		$this->load->library('lib_aptitudes');
+		$data['informatica']=$this->lib_aptitudes->corta($data['aptitudes'],1);			
+		$data['idiomas']=$this->lib_aptitudes->corta($data['aptitudes'],2);			
+		
+		else:
+
+		$info=$this->native_session->userdata('login_data_candidatos');
+$id=$info['ID'];
+		$data=$this->lib_usuarios->obtener_info($id);
+
+		$data['general']=$this->lib_usuarios->cv_general($id);	
+		$data['formacion']=$this->lib_usuarios->cv_formacion($id);
+		$data['experiencia']=$this->lib_usuarios->cv_experiencia($id);		
+		$this->load->library('lib_aptitudes');
+		$data['informatica']=$this->lib_aptitudes->corta($data['aptitudes'],1);			
+		$data['idiomas']=$this->lib_aptitudes->corta($data['aptitudes'],2);	
+		endif;
+
+		
+		$data['content']=$this->load->view('cv/web',$data,true);
+		$this->load->view('template_cv.php',$data);
+			
+			}
 		
 
 		
