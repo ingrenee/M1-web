@@ -450,8 +450,8 @@ $i_distrito2=$i_distrito2[0];
 		$this->load->view('template_candidatos.php',$data);
 		else:
 		
-		$this->native_session->set_flashdata('mensaje','Tus datos de informaci&oacute;n general fueron actualizados.');
-		
+//		$this->native_session->set_flashdata('mensaje','');
+		_set_mensajes('Tus datos de informaci&oacute;n general fueron actualizados.',1);
 		$_POST['usuarios_ID']=$info['ID'];
 		$_POST['modificado']=ahora();		
 		$this->db->replace('cv_general',$_POST);

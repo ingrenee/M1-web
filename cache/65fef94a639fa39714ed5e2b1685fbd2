@@ -1,4 +1,4 @@
-1341843954TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+1341850378TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -305,7 +305,7 @@ else
   <label>Fecha</label>
 
 <select name="fecha">
-<option value="" selected="selected">Cualquiera</option>
+<option value="" selected="selected">Cualquiera </option>
 <option value="1">hoy</option>
 <option value="2">hoy y ayer</option>
 <option value="3">hace 3 dias</option>
@@ -840,7 +840,7 @@ S/.
   <h1><a href="http://www.hayempleo.com/blog">Visita el blog</a></h1>
   <div class="cuerpo_feed">
   <span class="tuercas"></span>
-  <ul><li class='c6'><a href='http://www.hayempleo.com/blog/cuando-el-trabajo-da-la-felicidad/'>Cuando el trabajo da la felicidad</a></li><li class='c4'><a href='http://www.hayempleo.com/blog/microsoft-defiende-el-trabajo-desde-casa-para-mejorar-la-productividad/'>Microsoft defiende el trabajo desde casa para mejorar la productividad</a></li><li class='c7'><a href='http://www.hayempleo.com/blog/trabajos-de-medio-tiempo-que-pagan-hasta-40-la-hora/'>Trabajos de medio tiempo que pagan hasta $40 la hora</a></li><li class='c3'><a href='http://www.hayempleo.com/blog/desde-espana-a-fondo-el-ejemplo-del-trabajo-en-equipo/'>Desde España:  A fondo el ejemplo del trabajo en equipo</a></li><li class='c5'><a href='http://www.hayempleo.com/blog/sobre-trabajos-y-limosnas/'>Sobre trabajos y limosnas</a></li><li class='c0'><a href='http://www.hayempleo.com/blog/adicto-al-trabajoque-hacer/'>¿adicto al trabajo?,Qué hacer</a></li><li class='c1'><a href='http://www.hayempleo.com/blog/23-000-amas-de-casa-se-han-incorporado-al-mercado-laboral-desde-2008/'>23.000 amas de casa se han incorporado al mercado laboral desde 2008</a></li></ul></div>
+  <ul><li class='c7'><a href='http://www.hayempleo.com/blog/trabajos-de-medio-tiempo-que-pagan-hasta-40-la-hora/'>Trabajos de medio tiempo que pagan hasta $40 la hora</a></li><li class='c5'><a href='http://www.hayempleo.com/blog/sobre-trabajos-y-limosnas/'>Sobre trabajos y limosnas</a></li><li class='c6'><a href='http://www.hayempleo.com/blog/cuando-el-trabajo-da-la-felicidad/'>Cuando el trabajo da la felicidad</a></li><li class='c3'><a href='http://www.hayempleo.com/blog/desde-espana-a-fondo-el-ejemplo-del-trabajo-en-equipo/'>Desde España:  A fondo el ejemplo del trabajo en equipo</a></li><li class='c4'><a href='http://www.hayempleo.com/blog/microsoft-defiende-el-trabajo-desde-casa-para-mejorar-la-productividad/'>Microsoft defiende el trabajo desde casa para mejorar la productividad</a></li><li class='c2'><a href='http://www.hayempleo.com/blog/metodos-sencillos-y-eficaces-para-contrarrestar-el-stress-en-la-embarazada-2/'>Embarazo: Métodos sencillos y eficaces para contrarrestar el stress</a></li><li class='c0'><a href='http://www.hayempleo.com/blog/adicto-al-trabajoque-hacer/'>¿adicto al trabajo?,Qué hacer</a></li></ul></div>
   </div>
  
  <!--  bloque  de feed -->
