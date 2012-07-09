@@ -69,7 +69,7 @@ $h=tmp($general['distrito']);
     
 
 
-<div class="cv_academico">
+<div id="cv_academico">
 <div class="cv_pagina">
 
 <div class="cv_encabezado academico_titulo">
@@ -110,7 +110,7 @@ $h=tmp($general['distrito']);
 <!-- -->
 
 
-<div class="cv_laboral">
+<div id="cv_laboral">
 <div class="cv_pagina">
 <div class="cv_encabezado laboral_titulo">
 
@@ -177,7 +177,7 @@ $meses[4]='Intermedio - Avanzado';
 $meses[5]='Avanzado';
 
 ?>
-<div class="cv_informatica">
+<div id="cv_informatica">
 <div class="cv_pagina">
 <div class="cv_encabezado informatico_titulo">
 <h2>Inform&aacute;tica</h2>
@@ -233,7 +233,7 @@ endif;
 
 <!-- -->
 
-<div class="cv_idiomas">
+<div id="cv_idiomas">
 <div class="cv_pagina">
 <div class="cv_encabezado idiomas_titulo">
 <h2>Idiomas</h2>
