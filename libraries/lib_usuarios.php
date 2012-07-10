@@ -61,7 +61,7 @@ $info=$this->ci->native_session->userdata('login_data_candidatos');
 			$this->ci->db->where('usuarios_ID',$id);
 			endif;
 		
-		
+		$this->ci->db->order_by('fecha_a','desc');
 return $this->ci->db->get('cv_formacion');
 		}
 		
@@ -73,6 +73,7 @@ return $this->ci->db->get('cv_formacion');
 			else:
 			$this->ci->db->where('usuarios_ID',$id);
 			endif;
+			$this->ci->db->order_by('fecha_a','desc');
 return $this->ci->db->get('cv_experiencia');
 		}		
 

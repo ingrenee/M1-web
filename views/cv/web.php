@@ -39,7 +39,7 @@
 
 <div class="cv_contenido general_contenido">
 
-  <div class="fila"><span>Lugar de nacimiento:</span> <?PHP echo (tmp($general['pais']));?> - <?PHP echo tmp($general['departamento']);?>
+  <div class="fila"><span class="enc nacimiento">Lugar de nacimiento:</span> <?PHP echo (tmp($general['pais']));?> - <?PHP echo tmp($general['departamento']);?>
           <?PHP 
 if(!empty($general['distrito'])):
 $h=tmp($general['distrito']);
@@ -49,17 +49,17 @@ $h=tmp($general['distrito']);
  endif;
  ?>
         </div>
-        <div class="fila"><span>Lugar de residencia:</span> <?PHP echo tmp($general['pais2']);?> - <?PHP echo tmp($general['departamento2']);?>
+        <div class="fila"><span class="enc residencia">Lugar de residencia:</span> <?PHP echo tmp($general['pais2']);?> - <?PHP echo tmp($general['departamento2']);?>
           <?PHP $h=tmp($general['distrito2']);
  if(strlen($h)>0):
   echo ', '.$h;
  endif;
  ?>
         </div>
-      <div class="fila"><span>Direcci&oacute;n:</span> <?PHP echo $general['direccion'];?> </div><div class="fila"><span>DNI:</span> <?PHP echo $general['dni'];?> </div>
-      <div class="fila"><span>C&eacute;lular:</span> <?PHP echo $general['celular'];?> </div>
-      <div class="fila"><span>T&eacute;lefono:</span> <?PHP echo $general['telefono'];?> </div>
-      <div class="fila"><span>E-mail:</span> <?PHP echo $email;?> </div>
+      <div class="fila"><span class="enc direccion">Direcci&oacute;n:</span> <?PHP echo $general['direccion'];?> </div><div class="fila"><span class="enc identificacion">DNI:</span> <?PHP echo $general['dni'];?> </div>
+      <div class="fila"><span class="enc celular">C&eacute;lular:</span> <?PHP echo $general['celular'];?> </div>
+      <div class="fila"><span class="enc telefono">T&eacute;lefono:</span> <?PHP echo $general['telefono'];?> </div>
+      <div class="fila"><span class="enc email">E-mail:</span> <?PHP echo $email;?> </div>
       
       </div>
 </div>
@@ -82,12 +82,14 @@ $h=tmp($general['distrito']);
   
   <?PHP  if($formacion->num_rows()>0):?>
   <?PHP foreach($formacion->result_array() as $k => $v):?>
-  <div class="item">
-  <div class="fila"><span>Centro de estudios:</span> <?PHP  echo $v['cv_centros_nombre'];?></div>
-  <div class="fila"><span>Carrera:</span> <?PHP  echo $v['carrera'];?></div>
-  <div class="fila">
-    <span>Desde:</span>  <?PHP echo temp_cortar($v['fecha_a']);?> | 
-    <span>Hasta:</span>  <?PHP echo temp_cortar($v['fecha_b']);?>
+  <div class="item pos_<?PHP echo $k;?>">
+  <div class="fila centro"><span class="enc">Centro de estudios:</span> <span class="cont">
+  <?PHP  echo $v['cv_centros_nombre'];?></span></div>
+  <div class="fila carrera"><span class="enc">Carrera:</span> 
+  <span class="cont"><?PHP  echo $v['carrera'];?></span></div>
+  <div class="fila fechas">
+    <span class="enc desde">Desde:</span>  <?PHP echo temp_cortar($v['fecha_a']);?> | 
+    <span class="enc hasta">Hasta:</span>  <?PHP echo temp_cortar($v['fecha_b']);?>
   </div>
     
     
@@ -122,16 +124,16 @@ $h=tmp($general['distrito']);
   
   <?PHP  if($formacion->num_rows()>0):?>
   <?PHP foreach($experiencia->result_array() as $k => $v):?>
-  <div class="item">
-  <div class="fila"><span>Empresa: </span> <?PHP  echo $v['empresas_nombre'];?></div>
-  <div class="fila"><span>Cargo:</span> <?PHP  echo $v['cargo'];?></div>
-  <div class="fila"><p>
-  <span>FUNCIONES:</span> <?PHP echo $v['funciones'];?></p>
+  <div class="item pos_<?PHP echo $k;?>">
+  <div class="fila empresa"><span class="enc ">Empresa: </span> <span class="cont"><?PHP  echo $v['empresas_nombre'];?></span></div>
+  <div class="fila cargo"><span class="enc ">Cargo:</span> <span class="cont"><?PHP  echo $v['cargo'];?></span></div>
+  <div class="fila funciones"><p>
+  <span class="enc">Funciones:</span> <?PHP echo $v['funciones'];?></p>
     
   </div>
-  <div class="fila">
-    <span>Desde:</span> <?PHP echo temp_cortar($v['fecha_a']);?> | 
-    <span>Hasta:</span> <?PHP echo temp_cortar($v['fecha_b']);?>
+  <div class="fila fechas">
+    <span class="enc desde">Desde:</span> <?PHP echo temp_cortar($v['fecha_a']);?> | 
+    <span class="enc hasta">Hasta:</span> <?PHP echo temp_cortar($v['fecha_b']);?>
   </div>
     
     
@@ -198,8 +200,12 @@ foreach($informatica as $k => $v):
   <?PHP
 foreach($v as $k2 => $v2):
 ?>
-  <div class="item" value="<?PHP echo $i++;?>">
-    <span class="mayus"><?PHP echo strip_tags($v2);?></span> (<?PHP echo $meses[$k]; ?>)
+  <div class="item pos_<?PHP echo $k.$k2;?>" value="<?PHP echo $i++;?>">
+    <span class="enc mayus"><?PHP echo str_replace($meses[$k],'',strip_tags($v2));?></span>
+    <span class="niveles "> 
+    <span  class="nivel nivel_<?PHP echo $k;?>"></span>
+     <span class="cont">(<?PHP echo $meses[$k]; ?>)</span>
+     </span>
   </div>
   <?PHP
 endforeach;
@@ -252,7 +258,7 @@ foreach($idiomas as $k => $v):
 foreach($v as $k2 => $v2):
 ?>
   <div class="item" value="<?PHP echo $i++;?>">
-  <span class="mayus"><?PHP echo strip_tags($v2);?></span> (<?PHP echo $meses[$k]; ?>)
+  <span class="enc mayus"><?PHP echo str_replace($meses[$k],'',strip_tags($v2));?></span> <span class="niveles nivel_<?PHP echo $k;?>">(<?PHP echo $meses[$k]; ?>)</span>
   </div>
   <?PHP
 endforeach;
