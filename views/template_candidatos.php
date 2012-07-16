@@ -137,8 +137,21 @@ $info=$this->native_session->userdata('login_data_candidatos');?>
     
     <div class="bloque area " style="width:95%">
 
-  <a class="tool cv" href="<?PHP  echo site_url('cv/'.$info['ID']);?>">Ver mi curriculum</a>    
-   
+  <a class="tool cv" href="<?PHP  echo site_url('cv/'.$info['ID']);?>">Curriculum</a>    
+
+   <ul>
+   <li><a href="<?PHP  echo site_url('cv/'.$info['ID']);?>">Ver mi curriculum</a></li>
+      <li><a href="<?PHP  echo site_url('cv/descargar/');?>">Descargar curriculum</a></li>
+   <?PHP if(isset($info['login'])):?>
+   <li><a href="<?PHP  echo site_url('cv/'.$info['login']);?>" target="_blank">Ver mi curriculum ON LINE</a></li>
+    <?PHP else:?>
+	<li><a href="<?PHP  echo site_url('cv_config/nombre_usuario/'.$info['ID']);?>">Ver mi curriculum ON LINE</a></li>   
+   <?PHP endif;?>
+   <li><a href="<?PHP  echo site_url('cv_config/modelo/');?>">Seleccionar modelo de curriculum</a></li>   
+   <li><a href="<?PHP  echo site_url('cv_config/privacidad/'.$info['ID']);?>">Privacidad</a></li>   
+   <li><a href="<?PHP  echo site_url('cv_config/config/'.$info['ID']);?>">Configuraci&oacute;n</a></li>   
+
+   </ul>
     </div>
     
         <div class="bloque area " style="width:95%">

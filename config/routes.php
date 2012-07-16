@@ -112,6 +112,7 @@ $route['buscar/:any/:num'] = "buscar/index";
 $route['buscar/:any'] = "buscar/index";
 
 $route['cv/:num'] = "cv/index";
+$route['cv/descargar/(:num)'] = "cv/descargar/$1";
 $route['cv/(:any)'] = "cv/web/$1";
 
 $route['buscar/busco'] = "buscar/busco";

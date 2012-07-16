@@ -118,6 +118,7 @@ return $this->ci->db->get('cv_experiencia');
 			$this->ci->db->limit(1)->update('usuarios',$arr);
 			}
 			
+	
 			
 		function actualizar_off($w,$arr)
 		{
@@ -143,6 +144,12 @@ return $this->ci->db->get('cv_experiencia');
 			endif;
 		
 return $this->ci->db->limit(1)->get('usuarios')->row_array();
-		}		
+		}	
+		
+		function actualizar_info()
+		{
+			$tmp=$this->obtener_info();
+			$this->ci->native_session->set_userdata('login_data_candidatos',$tmp);
+			}	
 	
 }
