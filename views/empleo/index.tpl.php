@@ -35,11 +35,57 @@ endif;
   <div class="sociales">
 
 
+<script>
+function o(){
+var sharer = "https://www.facebook.com/sharer/sharer.php?u=";
+window.open(sharer + location.href, 'sharer', 'width=626,height=436');
+}
 
-<a name="fb_share" class="faceboton">Compartir</a> 
+function r(){
+var sharer = "https://www.facebook.com/sharer/sharer.php?u=";
+window.open("http://www.facebook.com/plugins/like.php?href=<?PHP echo base_url().uri_string();?>&send=false&layout=button_count&width=450&show_faces=false&action=recommend&colorscheme=light&font&height=21", 'Recomerdar', 'width=626,height=436');
+}
 
 
 
+</script>
+<style>div#sharebtn {
+
+font-family:arial,helvetica,sans-serif; font-size:12px;
+background:#3662a0;
+border:1px solid #999;
+
+padding:4px 4px 2px 2px;
+
+width:52px; 
+height:16px;
+
+display:inline-block;
+text-align:center;
+
+
+
+}
+
+div#sharebtn a {
+
+color:#fff;
+
+text-decoration:none;
+
+background-image:none;
+
+background-color:transparent;
+
+}
+</style>
+<div class="" id="sharebtn">
+<a name="fb_share" href="javascript:void(0);" class="faceboton"  onclick="o()">Compartir</a> 
+</div>
+
+
+
+<!--
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" 
 
 
@@ -49,7 +95,7 @@ endif;
 
 
 </script>
-
+-->
 
 
 
@@ -71,7 +117,7 @@ endif;
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
-
+<iframe src="//www.facebook.com/plugins/like.php?href=<?PHP echo  site_url($ruc.'trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
   </div>
 
 

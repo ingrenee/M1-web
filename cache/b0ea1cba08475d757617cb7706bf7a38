@@ -1,4 +1,4 @@
-1342645108TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+1342645115TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -13,7 +13,7 @@
 <title>Bolsa de trabajo y ofertas de empleo,t�cnico el�ctrico,administrador de tienda - sf,control de calidad de sw,programador sql,analista programador php - junior,analista programador php - practicas profesionales,practicante profesional programaci�n,asistente de producci�n ,gerente de administracion y finanzas,auditor de procesos | Hay Empleo</title>
 <meta property="og:title" content="Bolsa de trabajo y ofertas de empleo,t�cnico el�ctrico,administrador de tienda - sf,control de calidad de sw,programador sql,analista programador php - junior,analista programador php - practicas profesionales,practicante profesional programaci�n,asistente de producci�n ,gerente de administracion y finanzas,auditor de procesos | Hay Empleo" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://127.0.0.1/Bolsa2011/sistema/" />
+<meta property="og:url" content="http://127.0.0.1/bolsa2011/sistema/" />
 <meta property="og:image" content="http://www.hayempleo.com/images/icono_hayempleo.jpg" />
 <meta property="og:site_name" content="Hay empleo" />
 <meta property="fb:admins" content="100002181793032" />
@@ -37,7 +37,7 @@
 </script>
 
 
-<link href="http://127.0.0.1/Bolsa2011/sistema/html/css/empleate.css" rel="stylesheet" type="text/css" />
+<link href="http://127.0.0.1/bolsa2011/sistema/html/css/empleate.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -70,7 +70,7 @@
 
   <div id="subcabeza">
 
-  <h1><a href="http://127.0.0.1/Bolsa2011/sistema/">HayEmpleo.com</a></h1>
+  <h1><a href="http://127.0.0.1/bolsa2011/sistema/">HayEmpleo.com</a></h1>
 
   <h2>La web de empleos del Perú</h2>
  
@@ -78,8 +78,8 @@
   </div>
 <div class="lienzo_menu">
 
-<a href="http://127.0.0.1/Bolsa2011/sistema/hayempleo/about">Sobre HayEmpleo.com</a> | 
-<a href="http://127.0.0.1/Bolsa2011/sistema/hayempleo/contacto">Contáctanos</a> 
+<a href="http://127.0.0.1/bolsa2011/sistema/hayempleo/about">Sobre HayEmpleo.com</a> | 
+<a href="http://127.0.0.1/bolsa2011/sistema/hayempleo/contacto">Contáctanos</a> 
 
 </div>
    <span class="fechasup">hoy es 18 de Julio de 2012</span>
@@ -242,11 +242,11 @@ function ver(t)
 	
 if(url.length>0)
 {
-	t.action="http://127.0.0.1/Bolsa2011/sistema/buscar/"+url+".html";
+	t.action="http://127.0.0.1/bolsa2011/sistema/buscar/"+url+".html";
 }
 else
 {
-	t.action="http://127.0.0.1/Bolsa2011/sistema/buscar/"+url;
+	t.action="http://127.0.0.1/bolsa2011/sistema/buscar/"+url;
 	}
 	
 	}
@@ -263,7 +263,7 @@ else
 
 
 
-<div class="buscador borde"><form action="http://127.0.0.1/Bolsa2011/sistema/buscar" onsubmit="ver(this)" method="post">
+<div class="buscador borde"><form action="http://127.0.0.1/bolsa2011/sistema/buscar" onsubmit="ver(this)" method="post">
 
 <div class="bloque">
 
@@ -455,7 +455,7 @@ document.getElementById('departamento').value=;
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-tecnico-electrico-11661.html">1. Técnico Eléctrico</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-tecnico-electrico-11661.html">1. Técnico Eléctrico</a></h1>
 <p>Funciones:
 1. Reportar el funcionamiento de la maquina a cargo
 2. Verificar que el sistema de la maquina este funcionando correctamente
@@ -481,7 +481,7 @@ S/.
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-administrador-de-tienda-sf-11660.html">2. Administrador de Tienda - SF</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-administrador-de-tienda-sf-11660.html">2. Administrador de Tienda - SF</a></h1>
 <p>Nuestro cliente, Sofá Café esta en búsqueda de profesional para el puesto de:
  
 ADMINISTRADOR DE LOCAL
@@ -509,7 +509,7 @@ S/.
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-control-de-calidad-de-sw-11659.html">3. CONTROL DE CALIDAD DE SW</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-control-de-calidad-de-sw-11659.html">3. CONTROL DE CALIDAD DE SW</a></h1>
 <p>Se requiere de un profesional de Ingeniería de Sistemas o profesión afín con ideas innovadoras y capacidad de coordinación, aptitudes para trabajar en equipo y espíritu de superación.
 Se</p>
 <span class="lugar">
@@ -532,7 +532,7 @@ A tratar</span>
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-programador-sql-11657.html">4. Programador SQL</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-programador-sql-11657.html">4. Programador SQL</a></h1>
 <p>
 Personal con conocimientos sólidos en SQL SERVER 2005 (necesario).
 Que tenga conocimiento en Visual Studio 2005, 2010 (no necesario).
@@ -558,7 +558,7 @@ A tratar</span>
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-analista-programador-php-junior-11656.html">5. Analista Programador PHP - JUNIOR</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-analista-programador-php-junior-11656.html">5. Analista Programador PHP - JUNIOR</a></h1>
 <p>sistemas-unmsm, sistema e informatica, analista programador
  
 CREANTIS, empresa de consultori­a e implementacion de soluciones CRM basadas en software libre en rapido proceso de crecimiento y</p>
@@ -582,7 +582,7 @@ Según calificación</span>
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-analista-programador-php-practicas-profesionales-11655.html">6. Analista Programador PHP - Practicas Profesionales</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-analista-programador-php-practicas-profesionales-11655.html">6. Analista Programador PHP - Practicas Profesionales</a></h1>
 <p>sistemas-unmsm, sistema e informatica, analista programador
 CREANTIS, empresa de consultoría e implementación de soluciones CRM basadas en software libre en rápido proceso de crecimiento y</p>
 <span class="lugar">
@@ -605,7 +605,7 @@ Según calificación</span>
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-practicante-profesional-programacion-11654.html">7. Practicante Profesional Programación</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-practicante-profesional-programacion-11654.html">7. Practicante Profesional Programación</a></h1>
 <p>Importante Entidad Financiera en crecimiento en el sector de las microfinanzas, busca incorporar personal para cubrir la posición de PRACTICAS PROFESIONALES DE PROGRAMACION:
  
 Estudiantes de ultimo</p>
@@ -629,7 +629,7 @@ S/.
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-asistente-de-produccion--11653.html">8. Asistente de Producción </a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-asistente-de-produccion--11653.html">8. Asistente de Producción </a></h1>
 <p>Importante Laboratorio de Insumos Veternarios y alimentos balanceados para mascotas solicita un Asistente de Producción.
 Funciones:
 Programar y controlar  la producción,supervisar las</p>
@@ -653,7 +653,7 @@ S/.
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-gerente-de-administracion-y-finanzas-11652.html">9. Gerente de Administracion y Finanzas</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-gerente-de-administracion-y-finanzas-11652.html">9. Gerente de Administracion y Finanzas</a></h1>
 <p>Empresa líder Internacional en la gestión y ejecución de servicios de telecomunicación y obras civiles  requiere incorporar a su staff a un Gerente de Administración y Finanzas con los</p>
 <span class="lugar">
 &nbsp; Lima  </span>
@@ -675,7 +675,7 @@ S/.
 <div class="descripcion">
 <h1>
 <a 
-href="http://127.0.0.1/Bolsa2011/sistema/trabajo-auditor-de-procesos-11651.html">10. AUDITOR DE PROCESOS</a></h1>
+href="http://127.0.0.1/bolsa2011/sistema/trabajo-auditor-de-procesos-11651.html">10. AUDITOR DE PROCESOS</a></h1>
 <p>Empresa dedicada al suministro de repuestos y reparación de maquinaria y equipo especializado para la construcción y minería se encuentra en la búsqueda de candidatos para el Puesto de AUDITOR DE</p>
 <span class="lugar">
 &nbsp; Lima  </span>
@@ -687,7 +687,7 @@ S/.
   
 
 <div class="paginacion">
-&nbsp;<strong>1</strong>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/10">2</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/20">3</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/30">4</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/40">5</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/50">6</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/60">7</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/70">8</a>&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/10">&gt;</a>&nbsp;&nbsp;<a href="http://127.0.0.1/Bolsa2011/sistema/home/index/8790">Final</a></div>
+&nbsp;<strong>1</strong>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/10">2</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/20">3</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/30">4</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/40">5</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/50">6</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/60">7</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/70">8</a>&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/10">&gt;</a>&nbsp;&nbsp;<a href="http://127.0.0.1/bolsa2011/sistema/home/index/8790">Final</a></div>
 
 
 </div>
@@ -706,7 +706,7 @@ S/.
 <a href="http://facebook.com/hayempleo" target="_blank" class="sociales faceweb">S&iacute;guenos en facebook</a>
 <a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb">S&iacute;guenos en twitter</a>
 
-<a href="http://127.0.0.1/Bolsa2011/sistema/suscripciones" class="sociales suscripciones">Trabajo en tu E-mail</a>
+<a href="http://127.0.0.1/bolsa2011/sistema/suscripciones" class="sociales suscripciones">Trabajo en tu E-mail</a>
 
 </div>
 <!-- fin bloque de redes sociales -->
@@ -770,7 +770,7 @@ S/.
     
 
     <div class="bloque portal">
-<iframe src="http://127.0.0.1/Bolsa2011/sistema/portal/candidatos" class="fportal" allowtransparency="yes" scrolling="no" frameborder="0" height="" marginheight="0"></iframe>
+<iframe src="http://127.0.0.1/bolsa2011/sistema/portal/candidatos" class="fportal" allowtransparency="yes" scrolling="no" frameborder="0" height="" marginheight="0"></iframe>
 
     </div>
 
@@ -780,7 +780,7 @@ S/.
 
     <div class="bloque portal">
 
-    <iframe src="http://127.0.0.1/Bolsa2011/sistema/portal/empresas" class="fportal"  scrolling="no"allowtransparency="yes" frameborder="0" height="" marginheight="0"></iframe>
+    <iframe src="http://127.0.0.1/bolsa2011/sistema/portal/empresas" class="fportal"  scrolling="no"allowtransparency="yes" frameborder="0" height="" marginheight="0"></iframe>
     </div>
 
   <div class="bloque divisor2"></div>
@@ -840,7 +840,7 @@ S/.
   <h1><a href="http://www.hayempleo.com/blog">Visita el blog</a></h1>
   <div class="cuerpo_feed">
   <span class="tuercas"></span>
-  <ul><li class='c2'><a href='http://www.hayempleo.com/blog/tecnologia-provoca-adiccion-al-trabajo-en-mexicanos/'>Tecnología provoca adicción al trabajo en mexicanos</a></li><li class='c5'><a href='http://www.hayempleo.com/blog/ligeras-mejoras-en-mercado-laboral-estadounidense/'>Ligeras mejoras en mercado laboral estadounidense</a></li><li class='c6'><a href='http://www.hayempleo.com/blog/adicto-al-trabajoque-hacer/'>¿adicto al trabajo?,Qué hacer</a></li><li class='c4'><a href='http://www.hayempleo.com/blog/el-sector-de-la-consultoria-genera-empleo-pese-a-la-crisis/'>El sector de la consultoría genera empleo pese a la crisis</a></li><li class='c3'><a href='http://www.hayempleo.com/blog/si-buscas-trabajo-date-a-conocer-en-las-redes-sociales/'>Si buscas trabajo date a conocer en las redes sociales</a></li><li class='c1'><a href='http://www.hayempleo.com/blog/la-mayoria-prioriza-un-buen-trabajo-al-sueldo/'>La mayoría prioriza un buen trabajo al sueldo</a></li><li class='c0'><a href='http://www.hayempleo.com/blog/apuntes-para-mejorar-la-relacion-laboral/'>Apuntes para mejorar la relación laboral</a></li></ul></div>
+  <ul><li class='c0'><a href='http://www.hayempleo.com/blog/apuntes-para-mejorar-la-relacion-laboral/'>Apuntes para mejorar la relación laboral</a></li><li class='c2'><a href='http://www.hayempleo.com/blog/tecnologia-provoca-adiccion-al-trabajo-en-mexicanos/'>Tecnología provoca adicción al trabajo en mexicanos</a></li><li class='c6'><a href='http://www.hayempleo.com/blog/adicto-al-trabajoque-hacer/'>¿adicto al trabajo?,Qué hacer</a></li><li class='c5'><a href='http://www.hayempleo.com/blog/ligeras-mejoras-en-mercado-laboral-estadounidense/'>Ligeras mejoras en mercado laboral estadounidense</a></li><li class='c1'><a href='http://www.hayempleo.com/blog/la-mayoria-prioriza-un-buen-trabajo-al-sueldo/'>La mayoría prioriza un buen trabajo al sueldo</a></li><li class='c4'><a href='http://www.hayempleo.com/blog/el-sector-de-la-consultoria-genera-empleo-pese-a-la-crisis/'>El sector de la consultoría genera empleo pese a la crisis</a></li><li class='c3'><a href='http://www.hayempleo.com/blog/si-buscas-trabajo-date-a-conocer-en-las-redes-sociales/'>Si buscas trabajo date a conocer en las redes sociales</a></li></ul></div>
   </div>
  
  <!--  bloque  de feed -->
@@ -931,7 +931,7 @@ S/.
 
 <div class="menuinf">
 
-@2012 <a href="http://www.hayempleo.com">HayEmpleo.com</a> | <a href="http://127.0.0.1/Bolsa2011/sistema/hayempleo/about"> Sobre HayEmpleo.com</a>
+@2012 <a href="http://www.hayempleo.com">HayEmpleo.com</a> | <a href="http://127.0.0.1/bolsa2011/sistema/hayempleo/about"> Sobre HayEmpleo.com</a>
 
 </div>
 </div>
