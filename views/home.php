@@ -30,6 +30,7 @@ if(strlen($_SERVER['REQUEST_URI'])>1):
 <meta property="fb:admins" content="100002181793032" />
 <meta property="fb:app_id" content="335046663209679"/>
 <meta property="fb:page_id" content="252503461487375"/>
+<meta property="og:description" content="<?PHP _etiqueta_descripcion($_descripcion_);?>"/>
 
 <?PHP include(str_replace('system','',BASEPATH).'ga.php');?>
 

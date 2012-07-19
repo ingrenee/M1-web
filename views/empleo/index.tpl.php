@@ -117,7 +117,7 @@ background-color:transparent;
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
-<iframe src="//www.facebook.com/plugins/like.php?href=<?PHP echo  site_url($ruc.'trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+<iframe src="//www.facebook.com/plugins/like.php?href=<?PHP echo  site_url($ruc.'trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21&appId=335046663209679" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
   </div>
 
 
