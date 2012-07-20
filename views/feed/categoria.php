@@ -16,7 +16,12 @@ echo('<?xml version="1.0" encoding="UTF-8"?>');
 <atom:link href="<?PHP echo site_url('feed/categoria/'.$categoria);?>" rel="self" type="application/rss+xml"/>
 <link>http://www.hayempleo.com/</link>
 <description/>
-<lastBuildDate><?PHP echo date('d/m/y H:i:s');?></lastBuildDate>
+<lastBuildDate><?PHP 
+ echo date('d/m/y H:i:s');
+//echo date('D, d M Y H:i:s O', strtotime($v['creado']))
+?>
+
+</lastBuildDate>
 <language>es</language>
 <sy:updatePeriod>hourly</sy:updatePeriod>
 <sy:updateFrequency>1</sy:updateFrequency>
@@ -29,8 +34,8 @@ echo('<?xml version="1.0" encoding="UTF-8"?>');
 
 <pubDate>  <?PHP 
 
-echo date_format(date_create($v['creado']), 'd/m/y H:i:s');
-
+//echo date_format(date_create($v['creado']), 'd/m/y H:i:s');
+echo date('D, d M Y H:i:s O', strtotime($v['creado']))
 ?></pubDate>
 <dc:creator>HayEmpleo</dc:creator>
 <category>
