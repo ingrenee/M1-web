@@ -311,11 +311,11 @@ endif;
 
 	
 
-function _cortar($texto)
+function _cortar($texto,$caracteres=200)
 
 {
 
-	$MaxLENGTH=200;
+	$MaxLENGTH=$caracteres;
 
 	
 

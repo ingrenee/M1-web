@@ -28,6 +28,27 @@ $cat[14]='Otros';
 return $cat;
 		}
 	
+	
+	function  get_fuentes($var=FALSE)
+	{
+		$fu[]='Arial';
+		$fu[]='"Lucida Grande"';
+		$fu[]='Tahoma';
+		$fu[]='"Trebuchet MS"';
+		$fu[]='Verdana';
+		$fu[]='"MS Serif"';		
+		
+		if($var===FALSE):
+	return $fu;								
+		else:
+	return $fu[$var];								
+		endif;
+
+						
+		
+		
+		
+		}
 	function index()
 	{
 		$data=array();
@@ -77,6 +98,8 @@ $this->form_validation->set_rules('empleos_titulo', 'Titulo', 'trim|required');
 
 		
 $data['cat']=$this->get_categoria();	
+$data['fuente']=$this->get_fuentes();	
+
 $data['content']=$this->load->view('widgets/index',$data,true);
 else:
 
@@ -97,8 +120,12 @@ $this->load->view('template_solo',$data);
 		$data['categoria']=$this->input->post('categoria',true);
 		$data['alto']=$this->input->post('alto',true);
 		$data['ancho']=$this->input->post('ancho',true);
-		$data['cortar']=$this->input->post('cortar',true);
-		
+		$data['caracteres']=$this->input->post('caracteres',true);
+		$data['fecha']=$this->input->post('fecha',true);
+		$data['contenido']=$this->input->post('contenido',true);
+		$data['empleos_visibles']=$this->input->post('empleos_visibles',true);
+		$data['empleos_numero']=$this->input->post('empleos_numero',true);
+		$data['fuente']=$this->input->post('fuente',true);
 		
 		$this->load->view('widgets/iframe',$data);
 		
@@ -109,6 +136,14 @@ $this->load->view('template_solo',$data);
 	{
 		
 		$categoria=(int)$this->uri->segment(3);
+		$empleos_numero=(int)$this->uri->segment(4);
+
+		$data['caracteres']=(int)$this->uri->segment(8);
+		$data['alto']=(int)$this->uri->segment(11);
+
+		$data['contenido']=(int)$this->uri->segment(7);
+		$data['fecha']=(int)$this->uri->segment(6);
+	$data['fuente']=$this->get_fuentes((int)$this->uri->segment(9));
 		
 $cat[1]="Administración/Oficina";
 $cat[2]='Arte/Diseño/Medios';
@@ -132,11 +167,11 @@ $cat[14]='Otros';
 			$data['categoria']=$categoria;
 			$data['nombre_categoria']=$cat[$categoria];
 			
-			$data['feed']=$this->db->limit(20)->where('categoria like','%-'.$categoria.'-%')->where('estado','publicado')->order_by('creado','desc')->get('entradas');
+			$data['feed']=$this->db->limit($empleos_numero)->where('categoria like','%-'.$categoria.'-%')->where('estado','publicado')->order_by('creado','desc')->get('entradas');
 			else:
 						$data['categoria']=0;
 		$data['nombre_categoria']='Hayempleo.com | Oferta de empleo';
-		$data['feed']=$this->db->limit(20)->where('estado','publicado')->order_by('creado','desc')->get('entradas');
+		$data['feed']=$this->db->limit($empleos_numero)->where('estado','publicado')->order_by('creado','desc')->get('entradas');
 			endif;
 			//echo $this->db->last_query();
 			///exit();

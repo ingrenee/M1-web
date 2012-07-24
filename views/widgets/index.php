@@ -9,17 +9,30 @@ function opend(div)
 	function mostrarIframe()
 	{
 		categoria=$('select#categoria').val();
-		
+		if(categoria=='')
+		{
+			categoria=0;
+			}
+/*
+962208390
 
-		ancho=Number($('input#ancho').val())+6;
-		alto=Number($('input#alto').val())+6;
+*/
+		ancho=Number($('input#ancho').val());
+		alto=Number($('input#alto').val());
+		caracteres=parseInt($('input#caracteres').val(),10);
+	
+		w1=Number($('select#widgets_fecha').val());
+		w2=Number($('select#widgets_contenido').val());
 		
-		
+		//empleos_visibles
+		visibles=Number($('input#empleos_visibles').val());
+		numero=($('select#empleos_numero').val());
+		fuente=($('select#empleos_fuente').val());
 		//$('iframe#iframe').attr('src','<?PHP echo site_url('widgets/categoria/');?>/'+categoria);
 		//$('iframe#iframe').attr('width',ancho);
 		//$('iframe#iframe').attr('height',alto);
 		
-		$("div#ajax").load('<?PHP echo site_url('widgets/iframe/');?>',{categoria:categoria,ancho:ancho,alto:alto});
+		$("div#ajax").load('<?PHP echo site_url('widgets/iframe/');?>',{categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,empleos_numero:numero,fuente:fuente});
 
 		}
 </script>
@@ -89,8 +102,14 @@ Ingrese el ruc de la empresa:
 
 
 
-<?PHP
+<div class="fila">
+Tipo de letra
+<?PHP echo form_dropdown('empleos_fuente',$fuente,set_value('empleos_fuente'),'id="empleos_fuente"  onChange="mostrarIframe();"');?>
+<?PHP echo form_error('empleos_fuente');?>
+</div>
 
+<?PHP
+$num[5]='5 empleos';
 $num[10]='10 empleos';
 $num[20]='20 empleos';
 $num[30]='30 empleos';
@@ -98,7 +117,7 @@ $num[30]='30 empleos';
 ?>
 <div class="fila">
 Numero de empleos 
-<?PHP echo form_dropdown('empleos_numero',$num);?>
+<?PHP echo form_dropdown('empleos_numero',$num,set_value('empleos_numero'),'id="empleos_numero"  onChange="mostrarIframe();"');?>
 <?PHP echo form_error('empleos_numero');?>
 </div>
 
@@ -113,7 +132,7 @@ endif;
 ?>
 <div class="fila">
 Numero de empleos visibles
-<?PHP echo form_input('empleos_visibles',$cant);?>
+<?PHP echo form_input('empleos_visibles',$cant,'id="empleos_visibles"  onblur="mostrarIframe();"');?>
 <?PHP echo form_error('empleos_visibles');?>
 </div>
 <?PHP
@@ -124,11 +143,11 @@ $op[2]='No mostrar';
 ?>
 <div class="fila">
 Mostrar fecha de publicacion
-<?PHP echo form_dropdown('widgets_fecha',$op);?>
+<?PHP echo form_dropdown('widgets_fecha',$op,set_value('widgets_fecha'),'id="widgets_fecha"  onChange="mostrarIframe();"');?>
 </div>
 <div class="fila">
 Mostrar contenido
-<?PHP echo form_dropdown('widgets_contenido',$op);?>
+<?PHP echo form_dropdown('widgets_contenido',$op,set_value('widgets_contenido'),'id="widgets_contenido"  onChange="mostrarIframe();"');?>
 </div>
 <div class="fila">
 Cortar contenido a:
@@ -140,7 +159,7 @@ else:
 
 $cant=set_value('caracteres');
 endif;
- echo form_input('caracteres',$cant);?>
+ echo form_input('caracteres',$cant,' id="caracteres"  onblur="mostrarIframe();"');?>
  <?PHP echo form_error('caracteres');?>
 </div>
 
