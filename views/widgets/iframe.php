@@ -2,5 +2,14 @@
 $url='widgets/categoria/'.$categoria.'/'.$empleos_numero.'/';
 $url.=$empleos_visibles.'/'.$fecha.'/'.$contenido.'/'.$caracteres.'/'.$fuente.'/'.$ancho.'/'.$alto;
 ?>
-<iframe src="<?PHP echo  site_url($url);?>" width="<?PHP echo $ancho;?>" height="<?PHP echo $alto;?>" frameborder="1" scrolling="0">
+<script>
+function ini() {
+//document.getElementById("prueba").height = window.frames.prueba.document.body.offsetHeight + window.frames.prueba.document.body.scrollHeight;
+
+alert(window.frames.prueba.document.body.offsetHeight);
+}
+</script>
+<iframe src="<?PHP echo  site_url($url);?>"  id="prueba"  name="prueba"  height="<?PHP echo $alto;?> width="<?PHP echo $ancho;?>" frameborder="1" scrolling="0">
 </iframe>
+<!-- 
+height="<?PHP echo $alto;?>"  -->

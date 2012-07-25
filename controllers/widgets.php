@@ -143,6 +143,7 @@ $this->load->view('template_solo',$data);
 
 		$data['contenido']=(int)$this->uri->segment(7);
 		$data['fecha']=(int)$this->uri->segment(6);
+		$data['empleos_visibles']=(int)$this->uri->segment(5);
 	$data['fuente']=$this->get_fuentes((int)$this->uri->segment(9));
 		
 $cat[1]="Administración/Oficina";
