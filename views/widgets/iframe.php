@@ -9,7 +9,8 @@ function ini() {
 alert(window.frames.prueba.document.body.offsetHeight);
 }
 </script>
-<iframe src="<?PHP echo  site_url($url);?>"  id="prueba"  name="prueba"  height="<?PHP echo $alto;?> width="<?PHP echo $ancho;?>" frameborder="1" scrolling="0">
+<iframe src="<?PHP echo  site_url($url);?>"  id="prueba"  name="prueba"  height="<?PHP echo $alto;?>"
+ width="<?PHP echo $ancho;?>" frameborder="0"  scrolling="no">
 </iframe>
 <!-- 
 height="<?PHP echo $alto;?>"  -->
