@@ -3,20 +3,37 @@
 	font-family: <?PHP echo $fuente;?>;
 	
 }
+div.bx-window
+{
+	height: <?PHP echo $alto-180;?>px;
+}
 </style>
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script src="http://bxslider.com/sites/default/files/jquery.bxSlider.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#slider1').bxSlider({mode: 'vertical',displaySlideQty:5});
+    $('#slider1').bxSlider({mode: 'vertical',prevSelector:'#prev',auto:true,nextText:'Siguiente &raquo;',prevText:'&laquo; Anterior',nextSelector:'#next',displaySlideQty:<?PHP echo $empleos_visibles;?>});
   });
 </script>
 <link href="<?PHP echo base_url('css/widgets-azul.css');?>" rel="stylesheet" type="text/css" />
+<div class="lienzo">
+<div class="sup">
+<span class="a1">
+</span>
+<div class="sup_b">
+<span class="a2"></span>
+<span class="a3"></span>
 
-<div class="lista" style="height:<?PHP echo $alto;?>px">
-<div  id="slider1" style="height:<?PHP echo $alto;?>px">
+
+</div>
+</div>
+
+<div class="cuerpo_a">
+<div class="cuerpo_b">
+<div class="lista" style="height:<?PHP echo $alto-66;?>px">
+<ul  id="slider1" >
 <?PHP foreach($feed->result_array() as $k => $v):?>
-
+<li>
 <div class="item">
 <h1><a href="<?PHP echo  site_url('trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>"><?PHP echo $v['titulo'];?></a></h1>
 
@@ -41,8 +58,29 @@ Salario: <?PHP echo _salario($v['salario_2'],$v['salario']);?> |
 <?PHP endif;?>
 
 </div>
-
+</li>
 <?PHP endforeach;?>
+</ul>
+
 </div>
+<div class="enlaces">
+<a href="#prev" id="prev"></a>
+<a href="#next" id="next"></a>
+
+</div>
+
+</div>
+</div>
+
+<div class="inf">
+
+<div class="inf_b">
+<span class="c2"></span>
+<span class="c3"></span>
+
+
+</div>
+</div>
+
 
 </div>
