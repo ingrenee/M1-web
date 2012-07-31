@@ -1,6 +1,10 @@
 <?PHP
+$categoria=str_replace(',','__',$categoria);
+
+
 $url='widgets/categoria/'.$categoria.'/'.$empleos_numero.'/';
-$url.=$empleos_visibles.'/'.$fecha.'/'.$contenido.'/'.$caracteres.'/'.$fuente.'/'.$ancho.'/'.$alto;
+$url.=$empleos_visibles.'/'.$fecha.'/'.$contenido.'/'.$caracteres.'/'.$fuente.'/'.$ancho.'/'.$alto.'/'.$tipo.'/'.str_replace('#','',$color);
+ //echo $url;
 ?>
 <script>
 function ini() {

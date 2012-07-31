@@ -1,13 +1,16 @@
 <style>
 *{
 	font-family: <?PHP echo $fuente;?>;
+	color:#<?PHP echo $color;?>;
 	
 }
 div.bx-window
 {
 	height: <?PHP echo $alto-180;?>px;
 }
+
 </style>
+
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script src="http://bxslider.com/sites/default/files/jquery.bxSlider.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -31,6 +34,9 @@ div.bx-window
 <div class="cuerpo_a">
 <div class="cuerpo_b">
 <div class="lista" style="height:<?PHP echo $alto-66;?>px">
+
+
+<?PHP if($feed->num_rows()>0):?>
 <ul  id="slider1" >
 <?PHP foreach($feed->result_array() as $k => $v):?>
 <li>
@@ -41,7 +47,7 @@ div.bx-window
 <?PHP if((int)$fecha==1):?>
 
 <span>  <?PHP //echo date_format(date_create($v['creado']), 'd/m/y H:i:s');
-echo date('D, d M Y H:i:s O', strtotime($v['creado']))
+echo date('d/m/Y', strtotime($v['creado']))
 ?></span>
 <?PHP endif;?>
 
@@ -61,8 +67,29 @@ Salario: <?PHP echo _salario($v['salario_2'],$v['salario']);?> |
 </li>
 <?PHP endforeach;?>
 </ul>
+<?PHP else:?>
+<p>Los valores ingresados no generan ning&uacute;n resultado</p>
+
+<?PHP if($tipo==3):
+?><p>
+No se ha publicado ningun empleo con el ruc [<?PHP echo $categoria;?>].</p>
+<?PHP
+endif;?>
+
+<?PHP if($tipo==2):
+?><p>
+No se ha publicado ningun empleo con las palabras claves [<?PHP echo $categoria;?>].</p>
+<?PHP
+endif;?>
+
+
+<?PHP endif;?>
+
 
 </div>
+
+
+
 <div class="enlaces">
 <a href="#prev" id="prev"></a>
 <a href="#next" id="next"></a>

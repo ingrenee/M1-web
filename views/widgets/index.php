@@ -1,18 +1,71 @@
+<script type="text/javascript" src="<?PHP echo base_url('js/color/');?>/jquery.miniColors.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="<?PHP echo base_url('js/color/');?>/jquery.miniColors.css" />
+
 <script>
+
+
+$(document).ready( function() {
+				
+				//
+				// Enabling miniColors
+				//
+				
+				$(".color").miniColors({
+					letterCase: 'uppercase'		});
+				
+				
+});
+				
+				
+				
+				
+
 function opend(div)
 {
 	$('div.camp').hide();
 	$('div#'+div).show();
 	
 	}
-	
+	var cadena='';
 	function mostrarIframe()
 	{
+		categoria=false;
+		tipo=$("input[name='tipo']:checked").val(); 
+		
+		
+		
+		switch(tipo){
+			
+			case "1":
 		categoria=$('select#categoria').val();
 		if(categoria=='')
 		{
 			categoria=0;
 			}
+		
+			break;
+			
+				case "2":
+		categoria=$('input#claves').val();
+		if(categoria=='')
+		{
+			categoria=0;
+			}
+			
+			break;
+			
+							case "3":
+		categoria=$('input#ruc').val();
+		if(categoria=='')
+		{
+			categoria=0;
+			}
+			
+			break;
+			
+			
+		}
+			//alert(categoria);
 /*
 962208390
 
@@ -28,12 +81,19 @@ function opend(div)
 		visibles=Number($('input#empleos_visibles').val());
 		numero=($('select#empleos_numero').val());
 		fuente=($('select#empleos_fuente').val());
+		color=($('input#color').val());
+
 		//$('iframe#iframe').attr('src','<?PHP echo site_url('widgets/categoria/');?>/'+categoria);
 		//$('iframe#iframe').attr('width',ancho);
 		//$('iframe#iframe').attr('height',alto);
 		
-		$("div#ajax").load('<?PHP echo site_url('widgets/iframe/');?>',{categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,empleos_numero:numero,fuente:fuente});
-
+		cadenaup=''+categoria+color+caracteres+ancho+alto+w1+w2+visibles+numero+fuente;
+		if(cadena!=cadenaup)
+		{
+		
+		$("div#ajax").load('<?PHP echo site_url('widgets/iframe/');?>',{categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,empleos_numero:numero,fuente:fuente,tipo:tipo,color:color});
+		cadena=cadenaup;
+		}
 		}
 </script>
 <div class="c1" style="width:42%; float:left; ">
@@ -72,8 +132,7 @@ $d[1]=$d[2]=$d[3]=' style="display:none" ';
 <?PHP endif;?>
 
 
-<div class="fila camp" id="d_categoria" <?PHP echo $d[1];?> >
-
+<div class="fila camp" id="d_categoria" <?PHP echo $d[1];?> ><strong>1.</strong>
 <?PHP
 $js=' onChange="mostrarIframe()"  id="categoria" ';
 ?>
@@ -86,20 +145,60 @@ Seleccione una categoria:
 
 <div class="fila camp" id="d_clave" 
 <?PHP echo $d[2];?>
->
-Ingrese las palabras claves:
-<?PHP echo form_input('claves');?>
+><strong>1.</strong> Ingrese las palabras claves: <?PHP echo form_input('claves',set_value('claves'),' id="claves"  onblur="mostrarIframe();" ');?>
 <?PHP echo form_error('claves');?>
 </div>
 
 
 
-<div class="fila camp" id="d_empresa"  <?PHP echo $d[3];?> >
+<div class="fila camp" id="d_empresa"  <?PHP echo $d[3];?> >1. 
 Ingrese el ruc de la empresa:
-<?PHP echo form_input('ruc');?>
+<?PHP echo form_input('ruc',set_value('ruc'),' id="ruc"  onblur="mostrarIframe();" ');?>
 <?PHP echo form_error('ruc');?>
 </div>
 
+
+
+
+
+
+
+
+<div class="fila"><strong>2. </strong> Ancho del widget:
+<?PHP
+
+if(!isset($_POST['ancho']) || (isset($_POST['ancho']) && ((int)$_POST['ancho'])<=0) ):
+ $cant="350";
+else:
+
+$cant=set_value('ancho');
+endif;
+ echo form_input('ancho',$cant,'id="ancho"  onblur="mostrarIframe();" ');?>(px)
+ <?PHP echo form_error('ancho');?>
+</div>
+<div class="fila"><strong>3. </strong> Alto del widget:
+<?PHP
+
+if(!isset($_POST['alto']) || (isset($_POST['alto']) && ((int)$_POST['alto'])<=0) ):
+ $cant="250";
+else:
+
+$cant=set_value('alto');
+endif;
+ echo form_input('alto',$cant,'id="alto" onblur="mostrarIframe();"');?> (px)
+  <?PHP echo form_error('alto');?>
+</div>
+
+
+
+
+<h3>Avanzado</h3>
+
+<div class="fila">
+Color del widget
+<?PHP echo form_input('color',set_value('color'),'id="color" class="color"  " onBlur="mostrarIframe();"');?>
+<?PHP echo form_error('color');?>
+</div>
 
 
 <div class="fila">
@@ -130,7 +229,7 @@ else:
 $cant=set_value('empleos_visibles');
 endif;
 ?>
-<div class="fila">
+<div class="fila" style="display:none;">
 Numero de empleos visibles
 <?PHP echo form_input('empleos_visibles',$cant,'id="empleos_visibles"  onblur="mostrarIframe();"');?>
 <?PHP echo form_error('empleos_visibles');?>
@@ -164,33 +263,6 @@ endif;
 </div>
 
 
-<div class="fila">
-Ancho del widget:
-<?PHP
-
-if(!isset($_POST['ancho']) || (isset($_POST['ancho']) && ((int)$_POST['ancho'])<=0) ):
- $cant="350";
-else:
-
-$cant=set_value('ancho');
-endif;
- echo form_input('ancho',$cant,'id="ancho"  onblur="mostrarIframe();" ');?>(px)
- <?PHP echo form_error('ancho');?>
-</div>
-<input onblur="">
-<div class="fila">
-Alto del widget:
-<?PHP
-
-if(!isset($_POST['alto']) || (isset($_POST['alto']) && ((int)$_POST['alto'])<=0) ):
- $cant="250";
-else:
-
-$cant=set_value('alto');
-endif;
- echo form_input('alto',$cant,'id="alto" onblur="mostrarIframe();"');?> (px)
- <?PHP echo form_error('alto');?>
-</div>
 
 
 <div class="fila">

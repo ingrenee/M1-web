@@ -37,7 +37,7 @@ return $cat;
 		$fu[]='"Trebuchet MS"';
 		$fu[]='Verdana';
 		$fu[]='"MS Serif"';		
-		
+	
 		if($var===FALSE):
 	return $fu;								
 		else:
@@ -126,6 +126,8 @@ $this->load->view('template_solo',$data);
 		$data['empleos_visibles']=$this->input->post('empleos_visibles',true);
 		$data['empleos_numero']=$this->input->post('empleos_numero',true);
 		$data['fuente']=$this->input->post('fuente',true);
+		$data['tipo']=$this->input->post('tipo',true);
+		$data['color']=$this->input->post('color',true);
 		
 		$this->load->view('widgets/iframe',$data);
 		
@@ -135,16 +137,29 @@ $this->load->view('template_solo',$data);
 	function categoria()
 	{
 		
-		$categoria=(int)$this->uri->segment(3);
+		
+		
+		
 		$empleos_numero=(int)$this->uri->segment(4);
+$data['empleos_visibles']=(int)$this->uri->segment(5);
+$data['fecha']=(int)$this->uri->segment(6);		
+$data['contenido']=(int)$this->uri->segment(7);		
+$data['caracteres']=(int)$this->uri->segment(8);		
+$data['fuente']=$this->get_fuentes((int)$this->uri->segment(9));
+$data['ancho']=(int)$this->uri->segment(10);	
+$data['alto']=(int)$this->uri->segment(11);	
 
-		$data['caracteres']=(int)$this->uri->segment(8);
-		$data['alto']=(int)$this->uri->segment(11);
-$data['ancho']=(int)$this->uri->segment(10);
-		$data['contenido']=(int)$this->uri->segment(7);
-		$data['fecha']=(int)$this->uri->segment(6);
-		$data['empleos_visibles']=(int)$this->uri->segment(5);
-	$data['fuente']=$this->get_fuentes((int)$this->uri->segment(9));
+$data['tipo']=$tipo=((int)$this->uri->segment(12));
+$categoria=(int)$this->uri->segment(3);
+ //echo 'Tipo:'.$data['tipo'];
+if($data['tipo']>=2):
+ $categoria=$this->uri->segment(3);
+endif;
+
+
+$data['color']=($this->uri->segment(13));
+
+
 		
 $cat[1]="Administración/Oficina";
 $cat[2]='Arte/Diseño/Medios';
@@ -162,20 +177,63 @@ $cat[13]='Recursos Humanos';
 $cat[14]='Otros';
 
 		
+		//echo $categoria;
 		
-		
-		if($categoria>0):
+		if(($categoria>0) || strlen($categoria)>2):
 			$data['categoria']=$categoria;
-			$data['nombre_categoria']=$cat[$categoria];
 			
-			$data['feed']=$this->db->limit($empleos_numero)->where('categoria like','%-'.$categoria.'-%')->where('estado','publicado')->order_by('creado','desc')->get('entradas');
+			
+			
+			if($tipo==1):
+			$data['nombre_categoria']=$cat[$categoria];
+$data['feed']=$this->db->limit($empleos_numero)->where('categoria like','%-'.$categoria.'-%')->where('estado','publicado')->order_by('creado','desc')->get('entradas');
+			elseif($tipo==2):
+			$tmp=explode('__',$categoria);
+			
+			foreach($tmp as $k => $v):
+			if(strlen($v)>2):
+			$tmp2[]=$v;
+			endif;
+			endforeach;
+
+if(count($tmp2)>1):			
+			foreach($tmp2 as $k => $v):
+			if($k==0):
+			$this->db->where('(descripcion like','%'.$v.'%');
+			elseif($k==count($tmp2)-1):
+			$this->db->or_where('descripcion like','"%'.$v.'%")', false);
+			else:
+			$this->db->or_where('descripcion like','%'.$v.'%');
+			endif;
+			endforeach;
+else:
+			$this->db->where('descripcion like','%'.$tmp2[0].'%');
+endif;			
+$data['feed']=$this->db->limit($empleos_numero)->where('estado','publicado')->order_by('creado','desc')->get('entradas');
+
+
+			elseif($tipo==3):
+//			$this->db->where('ruc',$categoria);
+			
+			$s='select x.* from entradas as x, empleador as y where y.ruc="'.$categoria.'" and y.ID=x.empleador_ID order by  creado desc limit '.$empleos_numero.' ';
+$data['feed']=$this->db->query($s);//$this->db->limit($empleos_numero)->where('estado','publicado')->order_by('creado','desc')->get('entradas');
+			endif;
+			
 			else:
 						$data['categoria']=0;
 		$data['nombre_categoria']='Hayempleo.com | Oferta de empleo';
 		$data['feed']=$this->db->limit($empleos_numero)->where('estado','publicado')->order_by('creado','desc')->get('entradas');
 			endif;
+			
+	
+		
+		
+		
+		
+			
+			
 			//echo $this->db->last_query();
-			///exit();
+			//exit();
 			$data['content']=$this->load->view('widgets/categoria',$data);
 //			$this->load->view('template_widgets.php',$data);
 		
