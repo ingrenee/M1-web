@@ -1,17 +1,131 @@
+<style>
+/* Z-index of #mask must lower than #boxes .window */
+#mask {
+  position:absolute;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+#boxes .window {
+	position:absolute;
+	width:440px;
+	height:200px;
+	display:none;
+	z-index:9999;
+	padding:20px;
+}
+/* Customize your modal window here, you can add background image too */
+#boxes #dialog {
+	width:375px;
+	height:203px;
+	background-color: #FFF;
+	color: #333;
+	border: 1px solid #069;
+}
+#boxes #dialog  h1
+{
+	display: block;
+	font-size: 18px;
+}
+#boxes #dialog a.close
+{
+	display: inline-block;
+	background-color: #09C;
+	color: #FFF;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	text-decoration: none;
+}
+#boxes #dialog p
+{}
+#boxes #dialog textarea
+{
+	display: block;
+	width: 95%;
+	border: 1px solid #CCC;
+	height: 110px;
+	font-size: 12px;
+	color: #000;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+</style>
+
 <script type="text/javascript" src="<?PHP echo base_url('js/color/');?>/jquery.miniColors.min.js"></script>
 		<link type="text/css" rel="stylesheet" href="<?PHP echo base_url('js/color/');?>/jquery.miniColors.css" />
+        		<link type="text/css" rel="stylesheet" href="<?PHP echo base_url('css/');?>/miniform2012.css" />
 
 <script>
-
+var flag=false;
 
 $(document).ready( function() {
-				
+				$('#code').click(function (){
+				$(this).select();
+					
+					});
 				//
 				// Enabling miniColors
 				//
 				
 				$(".color").miniColors({
 					letterCase: 'uppercase'		});
+				
+				
+				
+				
+				
+				
+				//select all the a tag with name equal to modal
+	$('button[name=modal]').click(function(e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		//Get the A tag
+		var id = '#dialog';//$(this).attr('id');
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+		//Set height and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight,'top':0,'left':0});
+		//transition effect
+		$('#mask').fadeIn(500);
+		$('#mask').fadeTo("slow",0.8);
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+		//Set the popup window to center
+		$(id).css('top',  winH*0.5 - $(id).height()*0.5);
+		$(id).css('left', winW*0.5 - $(id).width()*0.5);
+		//transition effect
+		$(id).fadeIn(500);
+		flag=3;
+		mostrarIframe();
+		flag=false;
+	});
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		$('#mask, .window').hide();
+	});
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 });
@@ -27,6 +141,14 @@ function opend(div)
 	
 	}
 	var cadena='';
+	
+	
+	function actualizar()
+	{
+		flag=true;
+		mostrarIframe();
+		flag=false;
+		}
 	function mostrarIframe()
 	{
 		categoria=false;
@@ -88,23 +210,40 @@ function opend(div)
 		//$('iframe#iframe').attr('height',alto);
 		
 		cadenaup=''+categoria+color+caracteres+ancho+alto+w1+w2+visibles+numero+fuente;
-		if(cadena!=cadenaup)
+		if((cadena!=cadenaup) || (flag!=false))
 		{
+		opciones={categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,empleos_numero:numero,fuente:fuente,tipo:tipo,color:color};
 		
-		$("div#ajax").load('<?PHP echo site_url('widgets/iframe/');?>',{categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,empleos_numero:numero,fuente:fuente,tipo:tipo,color:color});
+		var aleatorio = Math.floor(Math.random() * 51) + 25;
+		
+		if(flag!=3){
+		$("div#ajax").load('<?PHP echo site_url('widgets/iframe/');?>'+'/'+aleatorio,opciones,function(){
+			
+			$('iframe#prueba').attr("src", $('iframe#prueba').attr("src"));
+			});
+		}else
+		{
+					$("#code").load('<?PHP echo site_url('widgets/iframe_print/');?>'+'/'+aleatorio,opciones,function(text){ $('#code').val(text).select();
+					
+					
+					});
+			}
 		cadena=cadenaup;
 		}
 		}
 </script>
-<div class="c1" style="width:42%; float:left; ">
+<div class="c1" style="width:43%; float:left; ">
 
 <form method="post" >
-<div class="formulario">
-<div class="fila3">
-<div class="caption">
-Tipo de widgets:Mostrar empleos
-</div> <br />
+<div class="form">
 
+<h1>
+Crear widget de empleos
+</h1> 
+
+<div class="form_contenido">
+
+<div class="fila3">
 <label><input type="radio" name="tipo"  onclick="opend('d_categoria')"  value="1" <?php 
 
 if(isset($_POST['tipo'])):
@@ -190,19 +329,22 @@ endif;
 </div>
 
 
+<div class="fila">
+<button onclick="actualizar()" type="button">Actualizar widget</button> <button name="modal" type="button">Obtener codigo</button> 
 
+</div>
 
 <h3>Avanzado</h3>
 
 <div class="fila">
-Color del widget
-<?PHP echo form_input('color',set_value('color'),'id="color" class="color"  " onBlur="mostrarIframe();"');?>
+4. Color del widget
+<?PHP echo form_input('color',set_value('color'),'id="color" class="color"  " onblur="mostrarIframe();"');?>
 <?PHP echo form_error('color');?>
 </div>
 
 
 <div class="fila">
-Tipo de letra
+5. Tipo de letra
 <?PHP echo form_dropdown('empleos_fuente',$fuente,set_value('empleos_fuente'),'id="empleos_fuente"  onChange="mostrarIframe();"');?>
 <?PHP echo form_error('empleos_fuente');?>
 </div>
@@ -215,7 +357,7 @@ $num[30]='30 empleos';
 
 ?>
 <div class="fila">
-Numero de empleos 
+6. Numero de empleos 
 <?PHP echo form_dropdown('empleos_numero',$num,set_value('empleos_numero'),'id="empleos_numero"  onChange="mostrarIframe();"');?>
 <?PHP echo form_error('empleos_numero');?>
 </div>
@@ -241,19 +383,19 @@ $op[2]='No mostrar';
 
 ?>
 <div class="fila">
-Mostrar fecha de publicacion
+7. Mostrar fecha de publicacion
 <?PHP echo form_dropdown('widgets_fecha',$op,set_value('widgets_fecha'),'id="widgets_fecha"  onChange="mostrarIframe();"');?>
 </div>
 <div class="fila">
-Mostrar contenido
+8. Mostrar contenido
 <?PHP echo form_dropdown('widgets_contenido',$op,set_value('widgets_contenido'),'id="widgets_contenido"  onChange="mostrarIframe();"');?>
 </div>
 <div class="fila">
-Cortar contenido a:
+9. Cortar contenido a:
 <?PHP
 
 if(!isset($_POST['caracteres']) || (isset($_POST['caracteres']) && ((int)$_POST['caracteres'])<=0) ):
- $cant=150;
+ $cant=100;
 else:
 
 $cant=set_value('caracteres');
@@ -266,15 +408,28 @@ endif;
 
 
 <div class="fila">
-<button>Obtener codigo</button>
+<button onclick="actualizar()" type="button">Actualizar widget</button> <button name="modal" type="button">Obtener codigo</button> 
 
 </div>
 
+
+
+</div>
 
 </div>
 
 
 </form>
+
+
+	
+
+
+
+
+
+
+
 
 
 </div>
@@ -285,4 +440,20 @@ endif;
 </div>
 
 
+</div>
+<div id="boxes">
+	<!-- #Aqui personalizas tu ventana modal -->
+	<div id="dialog" class="window">
+	<h1>Tu c&oacute;digo para el widget de empleos</h1> 
+    <p>Copia y pega el siguiente c&oacute;digo en  alg&uacute;n lugar de tu p&aacute;gina dentro de las etiquetas: </p>
+	<!-- el botón close está definido como clase close-->
+    <textarea id="code"></textarea>
+    <div id="ajax_box">
+    </div>
+    <a href="#" class="close">Cerrar ventana</a>
+  </div>
+
+    <!-- No elimines el div#mask, porque lo necesitarás para rellenar la pantalla -->
+    
+	<div id="mask"></div>
 </div>

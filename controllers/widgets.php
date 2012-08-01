@@ -9,7 +9,7 @@ class Widgets extends CI_Controller {
 	
 	function get_categoria()
 	{
-		$cat['']="selecciones una categoria";
+		$cat[0]="Todas las categorias";
 		$cat[1]="Administración/Oficina";
 $cat[2]='Arte/Diseño/Medios';
 $cat[3]='Científico/Investigación';
@@ -77,6 +77,7 @@ return $cat;
 		
 		$this->form_validation->set_rules('ancho', 'ancho', 'trim|required|numeric');
 		$this->form_validation->set_rules('alto', 'alto', 'trim|required|numeric');
+		$this->form_validation->set_rules('color', 'color', 'trim|required');
 			
 		if(isset($_POST['tipo']) && $_POST['tipo']==3):
 		$this->form_validation->set_rules('ruc', 'ruc', 'trim|required');
@@ -110,13 +111,18 @@ endif;
 $this->load->view('template_solo',$data);
 		
 		}
-	function iframe()
+		
+		function iframe_print()
+		{
+			$this->iframe(rand(9999,9999),true);
+			}
+	function iframe($aleatorio=false,$flag=false)
 	{
 //		$categoria=(int)$this->uri->segment(3);
 		 
-		 
 		
-		$data=array();
+		
+		$data=array();$data['flag2']=$flag;
 		$data['categoria']=$this->input->post('categoria',true);
 		$data['alto']=$this->input->post('alto',true);
 		$data['ancho']=$this->input->post('ancho',true);
@@ -128,6 +134,7 @@ $this->load->view('template_solo',$data);
 		$data['fuente']=$this->input->post('fuente',true);
 		$data['tipo']=$this->input->post('tipo',true);
 		$data['color']=$this->input->post('color',true);
+		
 		
 		$this->load->view('widgets/iframe',$data);
 		

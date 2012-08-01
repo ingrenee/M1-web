@@ -11,11 +11,18 @@ div.bx-window
 
 </style>
 
-<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
-<script src="http://bxslider.com/sites/default/files/jquery.bxSlider.min.js" type="text/javascript"></script>
+<script src="<?PHP echo base_url('js/jquery-1.3.2.min.js');?>" type="text/javascript"></script>
+<script src="<?PHP echo base_url('js/jquery.bxSlider.min.js');?>" type="text/javascript"></script>
 <script type="text/javascript">
+
+ 
+   
+
+
+
   $(document).ready(function(){
-    $('#slider1').bxSlider({mode: 'vertical',prevSelector:'#prev',auto:true,nextText:'Siguiente &raquo;',prevText:'&laquo; Anterior',nextSelector:'#next',displaySlideQty:<?PHP echo $empleos_visibles;?>});
+    $('#slider1').bxSlider({mode: 'vertical',prevSelector:'#prev',auto:true,nextText:'Siguiente &raquo;',prevText:'&laquo; Anterior',nextSelector:'#next',displaySlideQty:<?PHP echo $empleos_visibles;?>,autoHover:true});
+	
   });
 </script>
 <link href="<?PHP echo base_url('css/widgets-azul.css');?>" rel="stylesheet" type="text/css" />
@@ -41,7 +48,7 @@ div.bx-window
 <?PHP foreach($feed->result_array() as $k => $v):?>
 <li>
 <div class="item">
-<h1><a href="<?PHP echo  site_url('trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>"><?PHP echo $v['titulo'];?></a></h1>
+<h1><a href="<?PHP echo  site_url('trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>" target="_blank"><?PHP echo $v['titulo'];?></a></h1>
 
 
 <?PHP if((int)$fecha==1):?>
@@ -78,7 +85,11 @@ endif;?>
 
 <?PHP if($tipo==2):
 ?><p>
-No se ha publicado ningun empleo con las palabras claves [<?PHP echo $categoria;?>].</p>
+No se ha publicado ningun empleo con las palabras claves [<?PHP echo str_replace('%20',' ',$categoria);?>]. Escriba las palabras claves separadas por  una coma (,). Ejemplos: 
+</p>
+<p>1. administracion,marketing,gerente</p>
+<p>2. contabilidad, asistente contable,auxiliar contable</p>
+<p>3. sistemas,java,php,visual basic,.net</p>
 <?PHP
 endif;?>
 
