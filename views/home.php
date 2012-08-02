@@ -530,9 +530,11 @@ echo $content;
 <div class="fila">
 <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fhayempleo&amp;send=false&amp;layout=button_count&amp;width=300&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=21&amp;appId=335046663209679" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:21px;" allowTransparency="true"></iframe>
 </div>
-<a href="http://facebook.com/hayempleo" target="_blank" class="sociales faceweb">S&iacute;guenos en facebook</a>
-<a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb">S&iacute;guenos en twitter</a>
+<a href="http://facebook.com/hayempleo" target="_blank" class="sociales faceweb" style="display:inline-block;">&nbsp;Fans page &nbsp;&nbsp;&nbsp;</a>
 
+<a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb"style="display:inline-block;">&nbsp;Twitter</a>
+
+<a href="<?PHP echo site_url('widgets');?>" class="sociales trabajar">Trabajos en tu web <img src="<?PHP echo base_url('images/icon_nuevo3.gif');?>"></a>
 <a href="<?PHP echo site_url('suscripciones');?>" class="sociales suscripciones">Trabajo en tu E-mail</a>
 
 </div>

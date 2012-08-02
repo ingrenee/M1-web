@@ -26,6 +26,11 @@ div.bx-window
   });
 </script>
 <link href="<?PHP echo base_url('css/widgets-azul.css');?>" rel="stylesheet" type="text/css" />
+<style>
+div.lienzo div.cuerpo_a div.cuerpo_b div.lista
+{
+	height:<?PHP echo $alto-66;?>px;}
+</style>
 <div class="lienzo">
 <div class="sup">
 <span class="a1">
@@ -40,7 +45,7 @@ div.bx-window
 
 <div class="cuerpo_a">
 <div class="cuerpo_b">
-<div class="lista" style="height:<?PHP echo $alto-66;?>px">
+<div class="lista" >
 
 
 <?PHP if($feed->num_rows()>0):?>

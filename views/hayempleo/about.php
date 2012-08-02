@@ -7,7 +7,7 @@
 
 <body>
 <div class="empleo-descripcion">
-<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hayempleo.com%2Fhayempleo%2Fabout&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hayempleo.com%2Fhayempleo%2Fabout&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=335046663209679" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
 <h2>¿Qué es hayempleo.com?</h2>
 <p>hayempleo.com es una plataforma web gratuita y concebida para  la publicación de empleos y trabajos.</p>
 <p>&nbsp;</p>

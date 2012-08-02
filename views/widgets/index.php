@@ -233,7 +233,7 @@ function opend(div)
 		}
 </script>
 <div class="c1" style="width:43%; float:left; ">
-
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hayempleo.com%2Fwidgets&amp;send=false&amp;layout=button_count&amp;width=300&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=335046663209679" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
 <form method="post" >
 <div class="form">
 
@@ -330,7 +330,7 @@ endif;
 
 
 <div class="fila">
-<button onclick="actualizar()" type="button">Actualizar widget</button> <button name="modal" type="button">Obtener codigo</button> 
+<button onclick="actualizar()" type="button">Actualizar/ver widget</button> <button name="modal" type="button">Obtener código</button> 
 
 </div>
 
@@ -357,7 +357,7 @@ $num[30]='30 empleos';
 
 ?>
 <div class="fila">
-6. Numero de empleos 
+6. Número de empleos 
 <?PHP echo form_dropdown('empleos_numero',$num,set_value('empleos_numero'),'id="empleos_numero"  onChange="mostrarIframe();"');?>
 <?PHP echo form_error('empleos_numero');?>
 </div>
@@ -383,7 +383,7 @@ $op[2]='No mostrar';
 
 ?>
 <div class="fila">
-7. Mostrar fecha de publicacion
+7. Mostrar fecha de publicación
 <?PHP echo form_dropdown('widgets_fecha',$op,set_value('widgets_fecha'),'id="widgets_fecha"  onChange="mostrarIframe();"');?>
 </div>
 <div class="fila">
@@ -408,7 +408,7 @@ endif;
 
 
 <div class="fila">
-<button onclick="actualizar()" type="button">Actualizar widget</button> <button name="modal" type="button">Obtener codigo</button> 
+<button onclick="actualizar()" type="button">Actualizar/ver widget</button> <button name="modal" type="button">Obtener código</button> 
 
 </div>
 
@@ -435,9 +435,12 @@ endif;
 </div>
 <div class="c1" style="width:56%; float:right">
 <div id="ajax">
-
-
-</div>
+  <h2>Oportunidad</h2>
+  <p> Ahora puedes tener un widget con ofertas de empleo en tu  website o blog, y mostrar  ofertas  laborales para tus usuarios.</p>
+  <p>&nbsp;</p>
+  <h2> Personalizable:</h2>
+  <p> Puedes mostrar empleos de una determinada categoría,  filtradas por palabras claves, o los trabajos que  publica una determinada empresa.</p>
+Esto te permitirá publicar ofertas de empleo según  la temática de tu website o blog </div>
 
 
 </div>
@@ -445,7 +448,7 @@ endif;
 	<!-- #Aqui personalizas tu ventana modal -->
 	<div id="dialog" class="window">
 	<h1>Tu c&oacute;digo para el widget de empleos</h1> 
-    <p>Copia y pega el siguiente c&oacute;digo en  alg&uacute;n lugar de tu p&aacute;gina dentro de las etiquetas: </p>
+    <p>Copia y pega el siguiente c&oacute;digo en  alg&uacute;n lugar de tu p&aacute;gina:</p>
 	<!-- el botón close está definido como clase close-->
     <textarea id="code"></textarea>
     <div id="ajax_box">

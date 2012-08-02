@@ -153,7 +153,7 @@ $data['_titulo_']='Bolsa de trabajo y ofertas de empleo,'.strtolower($this->nati
 
 $data['_descripcion_']=strtolower($this->native_session->userdata('descripcion'));//Todas las ofertas de empleo y trabajo, busqueda de trabajo y empleo, publicacion de  ofertas de trabajo y empleo, bolsa de empleo, y practicas pre profesionales , publicacion de curriculum, todo gratis.';
 
-$this->output->cache(30);
+//$this->output->cache(30);
 
 
 $this->load->view('home',$data);
