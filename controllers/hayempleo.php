@@ -21,6 +21,8 @@ class Hayempleo extends CI_Controller {
 	{
 		$data=array();
 $data['content']=$this->load->view('hayempleo/about',$data,true);
+$data['_titulo_']='Trabajo en tu web , trabajo en tu blog';
+$data['_descripcion_']='publica ofertas de empleo en tu website/blog, dale a tus usuarios la oportunidad de encontrar empleo, configura y listo hay empleo';
 		$this->load->view('template2',$data);
 		}
 		

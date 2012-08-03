@@ -14,6 +14,11 @@
 
 
 
+<meta property="fb:admins" content="100002181793032,hector.hayempleo" />
+<meta property="fb:app_id" content="181431528656612"/>
+
+<meta property="og:description" content="<?PHP _etiqueta_descripcion($_descripcion_);?>"/>
+
 <?PHP else:?>
 <meta name="description" content="oferta de empleo,  aqui encontraras trabajo, las empresas publican sus ofertas y avisos, crea tu curriculum vitae gratis, hector doy trabajo recuerda hay empleo y hay trabajo" />
 <meta name="keywords" content="trabajo en lima, busco trabajo, trabajo de, Ofertas de trabajo, Bolsas de trabajo, avisos de trabajo, empleos lima, buscar empleo, hay empleo ,Ofertas de empleo, curriculum vitae, busco chamba, chamba, búsqueda de empleo, búsqueda de trabajo, empleo " />

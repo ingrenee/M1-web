@@ -204,15 +204,16 @@ function opend(div)
 		numero=($('select#empleos_numero').val());
 		fuente=($('select#empleos_fuente').val());
 		color=($('input#color').val());
+		web=($('input#web').val());
 
 		//$('iframe#iframe').attr('src','<?PHP echo site_url('widgets/categoria/');?>/'+categoria);
 		//$('iframe#iframe').attr('width',ancho);
 		//$('iframe#iframe').attr('height',alto);
 		
-		cadenaup=''+categoria+color+caracteres+ancho+alto+w1+w2+visibles+numero+fuente;
+		cadenaup=''+categoria+web+color+caracteres+ancho+alto+w1+w2+visibles+numero+fuente;
 		if((cadena!=cadenaup) || (flag!=false))
 		{
-		opciones={categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,empleos_numero:numero,fuente:fuente,tipo:tipo,color:color};
+		opciones={categoria:categoria,ancho:ancho,alto:alto,caracteres:caracteres,fecha:w1,contenido:w2,empleos_visibles:visibles,web:web,empleos_numero:numero,fuente:fuente,tipo:tipo,color:color};
 		
 		var aleatorio = Math.floor(Math.random() * 51) + 25;
 		
@@ -326,6 +327,13 @@ $cant=set_value('alto');
 endif;
  echo form_input('alto',$cant,'id="alto" onblur="mostrarIframe();"');?> (px)
   <?PHP echo form_error('alto');?>
+</div>
+
+<div class="fila"><strong>* </strong> Web/blog destino: http://
+<?PHP
+
+ echo form_input('web',set_value('web'),'id="web" onblur="mostrarIframe();" style="width:180px;" ');?>
+  <?PHP echo form_error('web');?>
 </div>
 
 

@@ -5,7 +5,15 @@
 <title>Documento sin título</title>
 </head>
 
-<body>
+<body><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="empleo-descripcion">
 <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.hayempleo.com%2Fhayempleo%2Fabout&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=335046663209679" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
 <h2>¿Qué es hayempleo.com?</h2>
@@ -32,5 +40,11 @@
 <p><strong>Skype: </strong>hayempleo<br />
 <strong>Gmail:</strong> hayempleo@gmail.com </p>
 </div>
+<div style="background-color:#FFF;">
+
+
+<div class="fb-comments" data-href="http://www.hayempleo.com/hayempleo/about" data-num-posts="2" data-width="551"></div>
+</div>
+
 </body>
 </html>

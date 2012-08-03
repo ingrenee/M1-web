@@ -1,3 +1,10 @@
+<?PHP 
+if(strlen($web)<5):
+echo '<h2>Debes de indicar una web de destino, crea otra vez el widget.</h2><a href="'.site_url('widgets').'">Actualizar</a>';
+
+exit();
+endif;?>
+<?PHP $alto=(int)$alto;?>
 <style>
 *{
 	font-family: <?PHP echo $fuente;?>;
@@ -53,7 +60,7 @@ div.lienzo div.cuerpo_a div.cuerpo_b div.lista
 <?PHP foreach($feed->result_array() as $k => $v):?>
 <li>
 <div class="item">
-<h1><a href="<?PHP echo  site_url('trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>" target="_blank"><?PHP echo $v['titulo'];?></a></h1>
+<h1><a href="<?PHP echo  site_url('trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html?iframe='.$web);?>" target="_blank"><?PHP echo $v['titulo'];?></a></h1>
 
 
 <?PHP if((int)$fecha==1):?>

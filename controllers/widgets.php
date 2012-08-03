@@ -135,6 +135,13 @@ $this->load->view('template_solo',$data);
 		$data['tipo']=$this->input->post('tipo',true);
 		$data['color']=$this->input->post('color',true);
 		
+		$web=$this->input->post('web',true);
+		
+		$web=str_replace(' ','',$web);
+		$web=str_replace('www.','',$web);
+		$web=str_replace('http','',$web);
+		
+		$data['web']=url_title($web);
 		
 		$this->load->view('widgets/iframe',$data);
 		
@@ -166,6 +173,7 @@ endif;
 
 $data['color']=($this->uri->segment(13));
 
+$data['web']=($this->uri->segment(14));
 
 		
 $cat[1]="Administración/Oficina";
