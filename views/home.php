@@ -532,17 +532,24 @@ echo $content;
 </div>
 <a href="http://facebook.com/hayempleo" target="_blank" class="sociales faceweb" style="display:inline-block;">&nbsp;Fans page &nbsp;&nbsp;&nbsp;</a>
 
-<a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb"style="display:inline-block;">&nbsp;Twitter</a>
+<a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb"style="display:inline-block;">&nbsp;Twitter&nbsp;&nbsp;&nbsp;</a>
+<a href="http://www.hayempleo.com/feed" target="_blank" class="sociales rss"style="display:inline-block;">&nbsp;Rss</a>
 
 <a href="<?PHP echo site_url('widgets');?>" class="sociales trabajar">Trabajos en tu web <img src="<?PHP echo base_url('images/icon_nuevo3.gif');?>"></a>
 <a href="<?PHP echo site_url('suscripciones');?>" class="sociales suscripciones">Trabajo en tu E-mail</a>
 
 </div>
 <!-- fin bloque de redes sociales -->
-
+<div class="bloque">
+<!-- Concurso 20 Blogs Peruanos//--> <style type="text/css"><!-- .my20blogsbutton img { border:0 } .my20blogsbutton div { border:0; margin:0px; padding:0px } .my20blogsbutton a, .my20blogsbutton a:hover, .my20blogsbutton a:link { text-decoration: none; border:0px; margin:0px; padding:0px; } --></style> <div class="my20blogsbutton" style="width:280px;"> <a href="http://20blogs.pe/votar/?id=712" target="_blank"><img src="http://20blogsperuanos.s3.amazonaws.com/chico02.png" alt="Concurso Blogs Peruanos, Estamos buscando a los 20 mejores Blogs del Per&uacute;"  border="0" title="Concurso Blogs Peruanos, Estamos buscando a los 20 mejores Blogs del Per&uacute;"></a><img align="right" src="<?PHP echo base_url('images/vota_hector.png');?>"> </div> 
+<!--//--> <!--//-->
+</div>
   <div class="bloque divisor2">
 
   </div>
+
+
+
 
 
 <!-- empresa activada -->
