@@ -29,12 +29,17 @@ endif;
 
 
   <div class="fila">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=335046663209679";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
-
-  <div class="sociales">
-
-
+<fb:like  style="float:right;  z-index: 99999;" href="<?PHP echo  site_url($ruc.'trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>" send="true" layout="button_count" width="150" show_faces="false" action="recommend"></fb:like>
 <script>
 function o(){
 var sharer = "https://www.facebook.com/sharer/sharer.php?u=";
@@ -80,7 +85,7 @@ background-color:transparent;
 }
 </style>
 <div class="" id="sharebtn">
-<a name="fb_share" href="javascript:void(0);" class="faceboton"  onclick="o()">Compartir</a> 
+  <a name="fb_share" href="javascript:void(0);" class="faceboton"  onclick="o()">Compartir</a> 
 </div>
 
 
@@ -117,8 +122,14 @@ background-color:transparent;
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
+
+<!--
+
 <iframe src="//www.facebook.com/plugins/like.php?href=<?PHP echo  site_url($ruc.'trabajo-'._titulo($v['titulo'],'').'-'.$v['ID'].'.html');?>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21&appId=335046663209679" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
-  </div>
+-->
+
+<br />
+<br />
 
 
 
