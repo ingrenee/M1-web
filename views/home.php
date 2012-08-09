@@ -305,11 +305,11 @@ else
 
 $fecha['']='Cualquiera ';
 
-$fecha[1]='hoy';
+$fecha[0]='hoy';
 
-$fecha[2]='hoy y ayer';
+$fecha[1]='hoy y ayer';
 
-$fecha[3]='hace 3 dias';
+$fecha[2]='hace 3 dias';
 
 $fecha[7]='hace una semana';
 
@@ -343,7 +343,7 @@ $f=str_replace(' DAY)','',$f);
 
     <label>Lugar</label>
 
-    <select name="departamento">
+    <select name="departamento" id="departamento">
 <option value="">Seleccione ciudad</option>
 <option value="888888:extranjero">Fuera del pais</option>
 <option value="999999:todas">Todas las ciudades</option>
