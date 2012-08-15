@@ -1,4 +1,11 @@
-<?PHP  
+<?PHP  function aplana($arr)
+{	$j='';
+	foreach($arr as $k => $v):
+	$j.='-'.$v.'-';
+	endforeach;
+	return $j;
+	}
+
 
 	function desaplana($str)
 

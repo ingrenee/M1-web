@@ -541,10 +541,7 @@ echo $content;
 
 </div>
 <!-- fin bloque de redes sociales -->
-<div class="bloque">
-<!-- Concurso 20 Blogs Peruanos//--> <style type="text/css"><!-- .my20blogsbutton img { border:0 } .my20blogsbutton div { border:0; margin:0px; padding:0px } .my20blogsbutton a, .my20blogsbutton a:hover, .my20blogsbutton a:link { text-decoration: none; border:0px; margin:0px; padding:0px; } --></style> <div class="my20blogsbutton" style="width:280px;"> <a href="http://20blogs.pe/votar/?id=712" target="_blank"><img src="http://20blogsperuanos.s3.amazonaws.com/chico02.png" alt="Concurso Blogs Peruanos, Estamos buscando a los 20 mejores Blogs del Per&uacute;"  border="0" title="Concurso Blogs Peruanos, Estamos buscando a los 20 mejores Blogs del Per&uacute;"></a><img align="right" src="<?PHP echo base_url('images/vota_hector.png');?>"> </div> 
-<!--//--> <!--//-->
-</div>
+
   <div class="bloque divisor2">
 
   </div>
