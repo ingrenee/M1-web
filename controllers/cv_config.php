@@ -166,7 +166,7 @@ $data['info']=$info;
 				redirect('cv_config/privacidad');
 		endif;
 		$this->load->view('template_candidatos.php',$data);
-			//exit();
+			//exit(); 
 			}
 		
 
