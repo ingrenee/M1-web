@@ -32,7 +32,15 @@ class Empleo extends CI_Controller {
 
 	
 
-
+function counter()
+{
+	$id=(int)$this->uri->segment(3,true);
+	
+	if($id):
+	$s='update entradas set contador=contador+1 where ID="'.$id.'"  ';
+	$this->db->query($s);
+	endif;
+	}
 
 	
 
@@ -135,15 +143,9 @@ class Empleo extends CI_Controller {
 
 
 
-		$data['v']=$obj->row_array();
-
-
-
-		$this->db->limit(1)->where('ID',$id)->update('entradas',array('contador'=>($data['v']['contador']+1)));
-
-
-
-		$data['empleador']=$this->db->limit(1)->where('ID',$data['v']['empleador_ID'])->get('empleador')->row_array();
+$data['v']=$obj->row_array();
+$this->db->limit(1)->where('ID',$id)->update('entradas',array('contador'=>($data['v']['contador']+1)));
+$data['empleador']=$this->db->limit(1)->where('ID',$data['v']['empleador_ID'])->get('empleador')->row_array();
 
 
 
@@ -193,7 +195,7 @@ class Empleo extends CI_Controller {
 
 		endif;
 
-
+ 
 
 		}
 
