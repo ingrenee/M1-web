@@ -11,11 +11,11 @@
 	}
 	
 	
-	?>
+	?> 
     
 <div id="cv_superior">
 
-<div class="cv_pagina">
+<div class="cv_pagina"> 
     <div class="cv_nombres">
     <h1><?PHP echo $general['nombres'];?></h1>
     </div>

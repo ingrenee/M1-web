@@ -9,7 +9,7 @@
 
 <title>HayEmpleo.com</title>
 
-
+  
 
 <?PHP if( (strlen($cv_modelos_codigo)<3) || ($cv_modelos_codigo=='default')):?><link href="<?PHP echo base_url('css/cv/base.css')?>" rel="stylesheet" type="text/css" />
 
