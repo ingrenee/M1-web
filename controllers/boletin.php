@@ -73,4 +73,18 @@ endif;
 
 
 
+function imagen()
+{	
+
+$w['operacion']='Boletin';
+	$w['texto']='Abrio mensaje '.$this->uri->segment(3);
+	$w['creado']=ahora();
+	$w['ip']=$_SERVER['REMOTE_ADDR'];
+	$this->db->insert('sucesos',$w);
+	
+	
+	redirect('http://20blogs.pe/votar/?id=712');
+	
+	}
+
 }

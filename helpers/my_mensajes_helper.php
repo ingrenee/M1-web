@@ -8,8 +8,11 @@ function _mensajes($r=false)
 	$tipo=$ci->native_session->flashdata('mensaje_tipo');
 	if($t):
 	if(!$r):
-	
-	echo '<div class="mensaje_sistema tipo_'.$tipo.'">';
+	if($tipo!=2):
+	echo '<div class="tipo_'.$tipo.'  ">';
+	else:
+		echo '<div class="  mensaje_sistema">';
+	endif;
 	echo $t;
 	echo '</div>';
 	else:

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -305,11 +305,11 @@ else
 
 $fecha['']='Cualquiera ';
 
-$fecha[1]='hoy';
+$fecha[0]='hoy';
 
-$fecha[2]='hoy y ayer';
+$fecha[1]='hoy y ayer';
 
-$fecha[3]='hace 3 dias';
+$fecha[2]='hace 3 dias';
 
 $fecha[7]='hace una semana';
 
@@ -343,7 +343,7 @@ $f=str_replace(' DAY)','',$f);
 
     <label>Lugar</label>
 
-    <select name="departamento">
+    <select name="departamento" id="departamento">
 <option value="">Seleccione ciudad</option>
 <option value="888888:extranjero">Fuera del pais</option>
 <option value="999999:todas">Todas las ciudades</option>
@@ -532,10 +532,12 @@ echo $content;
 </div>
 <a href="http://facebook.com/hayempleo" target="_blank" class="sociales faceweb" style="display:inline-block;">&nbsp;Fans page &nbsp;&nbsp;&nbsp;</a>
 
-<a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb"style="display:inline-block;">&nbsp;Twitter</a>
+<a href="https://twitter.com/#!/hayempleo" target="_blank" class="sociales twiweb"style="display:inline-block;">&nbsp;Twitter&nbsp;&nbsp;&nbsp;</a>
+<a href="http://www.hayempleo.com/feed" target="_blank" class="sociales rss"style="display:inline-block;">&nbsp;Rss</a>
 
 <a href="<?PHP echo site_url('widgets');?>" class="sociales trabajar">Trabajos en tu web <img src="<?PHP echo base_url('images/icon_nuevo3.gif');?>"></a>
 <a href="<?PHP echo site_url('suscripciones');?>" class="sociales suscripciones">Trabajo en tu E-mail</a>
+
 
 </div>
 <!-- fin bloque de redes sociales -->
@@ -543,6 +545,9 @@ echo $content;
   <div class="bloque divisor2">
 
   </div>
+
+
+
 
 
 <!-- empresa activada -->

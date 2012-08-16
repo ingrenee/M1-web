@@ -134,8 +134,8 @@ $this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('privacidad', 'privacidad', 'trim|required');
 	
-	//$this->form_validation->set_rules('privacidad2', 'privacidad2', 'trim|required');
-	    
+	$this->form_validation->set_rules('b2', 'opciones de vista previa', 'required');
+
 						
 	 	
 	    $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
@@ -145,13 +145,28 @@ $data['info']=$info;
 	
 	    if ($this->form_validation->run() == false):
 
-		
+		$data['config']=unserialize($data['config']);
 		$data['content']=$this->load->view('cv_config/privacidad',$data,true);
 		else:
+		//print_r($_POST);
 		
+		//print_r($_POST['b2']);
+	
+		//$string=aplana($_POST['b2']);
+		$config['op1']=$_POST['privacidad'];
+		$config['op2']=implode(',', $_POST['b2'] );
+		$w['config']=serialize($config);
+		
+		
+		$this->db->where('ID',$info['ID'])->limit(1)->update('usuarios',$w);
+		$tmp=$this->db->where('ID',$info['ID'])->get('usuarios')->row_array();
+		$this->native_session->set_userdata('login_data_candidatos',$tmp);
+				$data['content']=$this->load->view('cv_config/privacidad',$data,true);
+				_set_mensajes('La configuración fue guardada correctamente.',1);
+				redirect('cv_config/privacidad');
 		endif;
 		$this->load->view('template_candidatos.php',$data);
-			
+			//exit();
 			}
 		
 
