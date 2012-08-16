@@ -101,7 +101,7 @@ header("Content-Type: application/vnd.ms-word");
 		{
 			$data=array();
 		
-	
+	 
 			$login=$this->uri->segment(2);
 		
 		$t=$this->db->where('login',$login)->limit(1)->get('usuarios')->row_array();
@@ -110,7 +110,7 @@ header("Content-Type: application/vnd.ms-word");
 		
 		$info=$this->native_session->userdata('login_data_candidatos');
 $id=$info['ID'];
-
+ 
 		$data=$this->lib_usuarios->obtener_info($id);
 
 		$data['general']=$this->lib_usuarios->cv_general($id);	
