@@ -102,22 +102,15 @@ header("Content-Type: application/vnd.ms-word");
 			$data=array();
 		
 	
-			$id=$this->uri->segment(2);
+			$login=$this->uri->segment(2);
 		
-		if(false):
-		$data=$this->lib_usuarios->obtener_info($id);
-
-		$data['general']=$this->lib_usuarios->cv_general($id);	
-		$data['formacion']=$this->lib_usuarios->cv_formacion($id);
-		$data['experiencia']=$this->lib_usuarios->cv_experiencia($id);		
-		$this->load->library('lib_aptitudes');
-		$data['informatica']=$this->lib_aptitudes->corta($data['aptitudes'],1);			
-		$data['idiomas']=$this->lib_aptitudes->corta($data['aptitudes'],2);			
+		$t=$this->db->where('login',$login)->limit(1)->get('usuarios')->row_array();
 		
-		else:
-
+		if(count($t)>0):
+		
 		$info=$this->native_session->userdata('login_data_candidatos');
 $id=$info['ID'];
+
 		$data=$this->lib_usuarios->obtener_info($id);
 
 		$data['general']=$this->lib_usuarios->cv_general($id);	
@@ -126,10 +119,13 @@ $id=$info['ID'];
 		$this->load->library('lib_aptitudes');
 		$data['informatica']=$this->lib_aptitudes->corta($data['aptitudes'],1);			
 		$data['idiomas']=$this->lib_aptitudes->corta($data['aptitudes'],2);	
+		$data['content']=$this->load->view('cv/web',$data,true);
+		else:
+		$data['content']=$this->load->view('cv/web_no_existe',$data,true);
 		endif;
 
 		
-		$data['content']=$this->load->view('cv/web',$data,true);
+
 		$this->load->view('template_cv.php',$data);
 			
 			}
