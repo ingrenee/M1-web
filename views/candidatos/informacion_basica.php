@@ -35,7 +35,11 @@ Fecha de nacimiento
 </div>
 <?PHP $tmp=explode('-',@$usuario['fecha_nacimiento']);
 
+if(count($tmp)>2):
 $usuario['fecha_nacimiento']=$tmp[2].'/'.$tmp[1].'/'.$tmp[0];
+else:$usuario['fecha_nacimiento']=NULL;
+
+endif;
 ?>
 <?PHP echo form_input('fecha_nacimiento',_e($usuario,'fecha_nacimiento'),' id="fecha_nacimiento" ');?>(dd/mm/aaa)
 <?PHP echo form_error('fecha_nacimiento');?>

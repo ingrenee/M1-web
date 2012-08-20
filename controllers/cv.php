@@ -19,8 +19,9 @@ class Cv extends CI_Controller {
 	 function  __construct() {
         parent::__construct();  
 		$a=$this->native_session->userdata('login_candidatos');
-		$b=online();      
-		if($a || $b ):
+		$b=online();     
+		$login=$this->uri->segment(2); 
+		if($a || $b || isset($login)):
 		
 		else:
 		$this->native_session->flashdata('mensaje','No tiene permisos para entrar en esta seccion.');
@@ -108,7 +109,7 @@ header("Content-Type: application/vnd.ms-word");
 		
 		if(count($t)>0):
 		
-		$info=$this->native_session->userdata('login_data_candidatos');
+		$info=$t;//$this->native_session->userdata('login_data_candidatos');
 $id=$info['ID'];
  
 		$data=$this->lib_usuarios->obtener_info($id);

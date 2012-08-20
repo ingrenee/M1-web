@@ -435,6 +435,10 @@ $i_distrito2=$i_distrito2[0];
 		/* Extraemos  informacion del  usuario*/
 		$info=$this->native_session->userdata('login_data_candidatos');
 		$data['usuario']=$this->db->where('usuarios_ID',$info['ID'])->get('cv_general')->row_array();
+		$data['usuario']['ocupacion']=$info['ocupacion'];
+		$data['usuario']['ocupacion_ID']=$info['ocupacion_ID'];
+		$data['usuario']['ocupacion_cv']=$info['ocupacion_cv'];
+		
 		/**/
 
 
@@ -450,6 +454,20 @@ $i_distrito2=$i_distrito2[0];
 		$this->load->view('template_candidatos.php',$data);
 		else:
 		
+		/* guardaremos  el ocupaciontext, ocupacion_id, ocupacion_cv*/
+		$tmp=NULL;
+		$tmp['ocupacion']=$this->input->post('ocupacion');
+		$tmp['ocupacion_ID']=$this->input->post('ocupacion_ID');		
+		$tmp['ocupacion_cv']=$this->input->post('ocupacion_cv');		
+
+		$this->db->where('ID',$info['ID'])->update('usuarios',$tmp);		
+		
+		$info['ocupacion']=$tmp['ocupacion'];
+		$info['ocupacion_ID']=$tmp['ocupacion_ID'];
+		$info['ocupacion_cv']=$tmp['ocupacion_cv'];
+		$this->native_session->set_userdata('login_data_candidatos',$info);
+		
+		unset($_POST['ocupacion'],$_POST['ocupacion_ID'],$_POST['ocupacion_cv']);
 //		$this->native_session->set_flashdata('mensaje','');
 		_set_mensajes('Tus datos de informaci&oacute;n general fueron actualizados.',1);
 		$_POST['usuarios_ID']=$info['ID'];

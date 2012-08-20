@@ -32,6 +32,7 @@ endif;
    
    ?> />
 Solo las empresas: Si marcas esta opcion solo las empresas  podran ver tu curriculum, para ello les pediremos que inicien sesion. </label></div>
+<!--
  <div class="fila"><label> 
    <input type="radio" name="privacidad" id="privacidad3" value="3"  <?PHP 
    
@@ -47,6 +48,7 @@ Todos los que tengan una clave que yo les proporcionare: Si marcas esta clave tu
 
  <div class="fila">sss<?PHP echo form_error('privacidad');?></div>
 <?php echo validation_errors(); ?>
+-->
  <h3>2. Sobre la vista previa de mi curriculum</h3>
 <?PHP
 $op2=false;

@@ -20,7 +20,8 @@
     <h1><?PHP echo $general['nombres'];?></h1>
     </div>
 <div class="cv_ocupacion">
-    <h2><?PHP echo $ocupacion;?></h2>
+<h2><?PHP echo $ocupacion_cv;?></h2>
+    <h3><?PHP echo $ocupacion;?></h3>
 </div>
 
     <div class="cv_descripcion">

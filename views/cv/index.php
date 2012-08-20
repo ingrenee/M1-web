@@ -18,7 +18,15 @@
 <div class="curriculum">
 <div class="fila titulo  titulo02" style="padding-bottom:0px; display:block;  text-align:center;">
   <h2>&nbsp; </h2></div>
-<div class="fila  titulo " style="padding-bottom:10px; display:block;  text-align:center;"><h1 style="font-size:17px;"><a href="<?PHP echo site_url('candidatos/informacion_general');?>" class="titulo_cv_01"><?PHP echo $general['nombres'];?></a></h1> </div>
+<div class="fila  titulo " style="padding-bottom:10px; display:block;  text-align:center;"><h1 style="font-size:17px;"><a href="<?PHP echo site_url('candidatos/informacion_general');?>" class="titulo_cv_01"><?PHP echo $general['nombres'];?></a></h1> 
+<h3>
+<?PHP
+echo $ocupacion_cv;
+?>
+</h3>
+<h4><?PHP echo $ocupacion;?></h4>
+
+</div>
 <div class="bloque">
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
