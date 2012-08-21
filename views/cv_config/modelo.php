@@ -11,7 +11,7 @@
 Usted ya seleccion&oacute;  una plantilla para su curriculum on line. 
 </td>
 <td width="243" align="center">
-<img src="<?PHP echo base_url('css/cv/'.$modelo_seleccionado['codigo'].'/preview.jpg');?>">
+<img src="<?PHP echo base_url('css/cv/'.strtolower($modelo_seleccionado['codigo']).'/preview.jpg');?>">
 <h3><?PHP echo $modelo_seleccionado['titulo'];?></h3>
 </td>
 </tr>
