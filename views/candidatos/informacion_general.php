@@ -1,3 +1,31 @@
+
+	<script type='text/javascript' src='<?PHP echo base_url('js/autocomplete/jquery.autocomplete.js');?>'></script>
+<link rel="stylesheet" href="<?PHP base_url('js/autocomplete/style.css');?>" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="<?PHP echo base_url('js/autocomplete/jquery.autocomplete.css');?>" />
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("input#ocupacion").autocomplete("<?PHP echo base_url('profesiones/buscar');?>", {
+		width: 260,
+		selectFirst: false,
+	/*	autoFill:true,*/
+		mustMatch:true
+	});
+		
+
+		$("input#ocupacion").result(function(event, data, formatted) {
+		if (data)
+			$("input#ocupacion_ID").val(data[1]);
+	});
+		
+	})
+	</script>
+
+
+
+
+
 <?PHP $this->load->view('info');?>
 <div class="bloque formulario">
 <h2 class="blanco">1. Informacion general</h2>
@@ -12,10 +40,41 @@
 <div class="formu2">
 
 <div class="fila">
+<div class="caption">Profesi&oacute;n / carrera / oficio / ocupaci&oacute;n</div> <?PHP  echo form_input('ocupacion',_e($usuario,'ocupacion'),' id="ocupacion" class="largo" ');?> <?PHP echo  form_error('ocupacion');?>
+
+<?PHP echo  form_error('ocupacion_ID');?>
+
+</div>
+
+<div class="fila" style="display:none">
+<div class="caption">ID</div> <?PHP  echo form_input('ocupacion_ID',_e($usuario,'ocupacion_ID'),' id="ocupacion_ID" ');?> <?PHP echo  form_error('ocupacion_ID');?>
+</div>
+<div class="fila" style="">
+<div class="caption">Título/ocupación/especialidad que se mostrar&aacute; en el curr&iacute;culum</div> 
+<?PHP  echo form_input('ocupacion_cv',_e($usuario,'ocupacion_cv'),' id="ocupacion_cv" class="largo" ');?> <?PHP echo  form_error('ocupacion_cv');?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fila">
 <div class="caption">
 Nombre completo
 </div>
-<?PHP echo form_input('nombres',_e($usuario,'nombres'));?>
+<?PHP echo form_input('nombres',_e($usuario,'nombres'),'class="largo"  ');?>
 <?PHP echo form_error('nombres');?>
 </div>
 

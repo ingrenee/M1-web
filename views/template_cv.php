@@ -9,11 +9,13 @@
 
 <title>HayEmpleo.com</title>
 
+  
 
-<link href="<?PHP echo base_url('css/cv/base.css')?>" rel="stylesheet" type="text/css" />
+<?PHP if( (strlen($cv_modelos_codigo)<3) || ($cv_modelos_codigo=='default')):?><link href="<?PHP echo base_url('css/cv/base.css')?>" rel="stylesheet" type="text/css" />
 
-<link href="<?PHP echo base_url('css/cv/default.css')?>" rel="stylesheet" type="text/css" />
-
+<?PHP else:?>
+<link href="<?PHP echo base_url('css/cv/'.strtolower($cv_modelos_codigo).'/'.strtolower($cv_modelos_codigo).'.css')?>" rel="stylesheet" type="text/css" />
+<?PHP endif;?>
 <?PHP include(str_replace('system','',BASEPATH).'ga.php');?>
 </head>
 
@@ -22,9 +24,13 @@
 <div id="cv_lienzo">
 <div id="cv_capa01">
 <div id="cv_capa02">
+<div class="he_pagina">
+
 <?PHP
 echo $content;
 ?>
+
+</div>
 </div>
 </div>
 </div>

@@ -139,26 +139,40 @@ $info=$this->native_session->userdata('login_data_candidatos');?>
 
   <a class="tool cv" href="<?PHP  echo site_url('cv/'.$info['ID']);?>">Curriculum</a>    
 
-   <ul>
+   <ul class="opciones">
    <li><a href="<?PHP  echo site_url('cv/'.$info['ID']);?>">Ver mi curriculum</a></li>
-      <li><a href="<?PHP  echo site_url('cv/descargar/');?>">Descargar curriculum</a></li>
-   <?PHP if(isset($info['login'])):?>
-   <li><a href="<?PHP  echo site_url('cv/'.$info['login']);?>" target="_blank">Ver mi curriculum ON LINE</a></li>
-    <?PHP else:?>
-	<li><a href="<?PHP  echo site_url('cv_config/nombre_usuario/'.$info['ID']);?>">Ver mi curriculum ON LINE</a></li>   
-   <?PHP endif;?>
-   <li><a href="<?PHP  echo site_url('cv_config/modelo/');?>">Seleccionar modelo de curriculum</a></li>   
-   <li><a href="<?PHP  echo site_url('cv_config/privacidad/'.$info['ID']);?>">Privacidad</a></li>   
-   <li><a href="<?PHP  echo site_url('cv_config/config/'.$info['ID']);?>">Configuraci&oacute;n</a></li>   
+  <li><a class="" href="<?PHP  echo site_url('cv/descargar/'.$info['ID']);?>">Descargar curriculum</a>    </li>
+
 
    </ul>
     </div>
-    
-        <div class="bloque area " style="width:95%">
-
-  <a class="tool descargar" href="<?PHP  echo site_url('cv/descargar/'.$info['ID']);?>">Descargar curriculum</a>    
    
+    
+    <div class="bloque area " style="width:95%">
+
+  <a class="tool cv" href="javascript:void(0);">Curriculum ONLINE</a>    
+
+   <ul class="opciones">
+
+
+   <?PHP if(isset($info['login']) && strlen($info['login'])>3):?>
+   <li><a href="<?PHP  echo site_url('cv/'.$info['login']);?>" target="_blank">Ver mi curriculum ONLINE</a></li>
+    <?PHP else:?>
+	<li><a href="<?PHP  echo site_url('cv_config/nombre_usuario/'.$info['ID']);?>">Ver mi curriculum ONLINE</a></li>   
+   <?PHP endif;?>
+   <li><a href="<?PHP  echo site_url('cv_config/modelo/');?>">Seleccionar modelo</a></li>   
+	<li><a href="<?PHP  echo site_url('cv_config/nombre_usuario/'.$info['ID']);?>">Dirección de curriculum ONLINE</a></li>   
+   
+   <!--
+   <li><a href="<?PHP  echo site_url('cv_config/privacidad/'.$info['ID']);?>">Privacidad</a></li>   
+-->
+
+</ul>
     </div>
+    
+    
+    
+        
     
       
         <div class="bloque area " style="width:95%">

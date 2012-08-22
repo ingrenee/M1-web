@@ -11,14 +11,18 @@
 	}
 	
 	
-	?>
+	?> 
     
 <div id="cv_superior">
 
-<div class="cv_pagina">
+<div class="cv_pagina"> 
     <div class="cv_nombres">
     <h1><?PHP echo $general['nombres'];?></h1>
     </div>
+<div class="cv_ocupacion">
+<h2><?PHP echo $ocupacion_cv;?></h2>
+    <h3><?PHP echo $ocupacion;?></h3>
+</div>
 
     <div class="cv_descripcion">
     <?PHP echo $general['descripcion'];?>
@@ -30,11 +34,13 @@
 
 </div>
 
-<div id="cv_general">
+<div id="cv_general" class="cv_seccion">
 <div class="cv_pagina">
 
 <div class="cv_encabezado general_titulo">
-<h2>Información general</h2>
+<h2>Información general
+<div class="cv_titulo_exterior"></div>
+</h2>
 </div>
 
 <div class="cv_contenido general_contenido">
@@ -69,11 +75,11 @@ $h=tmp($general['distrito']);
     
 
 
-<div id="cv_academico">
+<div id="cv_academico" class="cv_seccion">
 <div class="cv_pagina">
 
 <div class="cv_encabezado academico_titulo">
-<h2>Formaci&oacute;n Acad&eacute;mica</h2>
+<h2>Formaci&oacute;n Acad&eacute;mica<div class="cv_titulo_exterior"></div></h2>
 </div>
 
 
@@ -112,11 +118,11 @@ $h=tmp($general['distrito']);
 <!-- -->
 
 
-<div id="cv_laboral">
+<div id="cv_laboral" class="cv_seccion">
 <div class="cv_pagina">
 <div class="cv_encabezado laboral_titulo">
 
-<h2>Experiencia laboral</h2>
+<h2>Experiencia laboral<div class="cv_titulo_exterior"></div></h2>
 </div>
 
 <div class="cv_contenido laboral_contenido">
@@ -179,10 +185,10 @@ $meses[4]='Intermedio - Avanzado';
 $meses[5]='Avanzado';
 
 ?>
-<div id="cv_informatica">
+<div id="cv_informatica" class="cv_seccion">
 <div class="cv_pagina">
 <div class="cv_encabezado informatico_titulo">
-<h2>Inform&aacute;tica</h2>
+<h2>Inform&aacute;tica<div class="cv_titulo_exterior"></div></h2>
 </div>
 
 
@@ -239,10 +245,10 @@ endif;
 
 <!-- -->
 
-<div id="cv_idiomas">
+<div id="cv_idiomas" class="cv_seccion">
 <div class="cv_pagina">
 <div class="cv_encabezado idiomas_titulo">
-<h2>Idiomas</h2>
+<h2>Idiomas<div class="cv_titulo_exterior"></div></h2>
 </div>
 <div class="cv_contenido idiomas_contenido">
 

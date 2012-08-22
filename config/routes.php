@@ -116,6 +116,7 @@ $route['cv/descargar/(:num)'] = "cv/descargar/$1";
 $route['cv/(:any)'] = "cv/web/$1";
 
 $route['buscar/busco'] = "buscar/busco";
+$route['postular/(:num)'] = "postular/index/$2";
 
 /* End of file routes.php */
 

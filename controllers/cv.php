@@ -19,8 +19,9 @@ class Cv extends CI_Controller {
 	 function  __construct() {
         parent::__construct();  
 		$a=$this->native_session->userdata('login_candidatos');
-		$b=online();      
-		if($a || $b ):
+		$b=online();     
+		$login=$this->uri->segment(2); 
+		if($a || $b || isset($login)):
 		
 		else:
 		$this->native_session->flashdata('mensaje','No tiene permisos para entrar en esta seccion.');
@@ -28,7 +29,7 @@ class Cv extends CI_Controller {
 		endif;
     }
 
-	
+	 
 		
 	 
 	function index()
@@ -101,23 +102,16 @@ header("Content-Type: application/vnd.ms-word");
 		{
 			$data=array();
 		
-	
-			$id=$this->uri->segment(2);
+	 
+			$login=$this->uri->segment(2);
 		
-		if(false):
-		$data=$this->lib_usuarios->obtener_info($id);
-
-		$data['general']=$this->lib_usuarios->cv_general($id);	
-		$data['formacion']=$this->lib_usuarios->cv_formacion($id);
-		$data['experiencia']=$this->lib_usuarios->cv_experiencia($id);		
-		$this->load->library('lib_aptitudes');
-		$data['informatica']=$this->lib_aptitudes->corta($data['aptitudes'],1);			
-		$data['idiomas']=$this->lib_aptitudes->corta($data['aptitudes'],2);			
+		$t=$this->db->where('login',$login)->limit(1)->get('usuarios')->row_array();
 		
-		else:
-
-		$info=$this->native_session->userdata('login_data_candidatos');
+		if(count($t)>0):
+		
+		$info=$t;//$this->native_session->userdata('login_data_candidatos');
 $id=$info['ID'];
+ 
 		$data=$this->lib_usuarios->obtener_info($id);
 
 		$data['general']=$this->lib_usuarios->cv_general($id);	
@@ -126,10 +120,13 @@ $id=$info['ID'];
 		$this->load->library('lib_aptitudes');
 		$data['informatica']=$this->lib_aptitudes->corta($data['aptitudes'],1);			
 		$data['idiomas']=$this->lib_aptitudes->corta($data['aptitudes'],2);	
+		$data['content']=$this->load->view('cv/web',$data,true);
+		else:
+		$data['content']=$this->load->view('cv/web_no_existe',$data,true);
 		endif;
 
 		
-		$data['content']=$this->load->view('cv/web',$data,true);
+
 		$this->load->view('template_cv.php',$data);
 			
 			}
