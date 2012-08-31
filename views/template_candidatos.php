@@ -135,7 +135,7 @@ echo $content;
 <?PHP 
 $info=$this->native_session->userdata('login_data_candidatos');?>
     
-    <div class="bloque area " style="width:95%">
+    <div class="bloque area opciones" style="width:95%">
 
   <a class="tool cv" href="<?PHP  echo site_url('cv/'.$info['ID']);?>">Curriculum</a>    
 

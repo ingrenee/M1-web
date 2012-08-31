@@ -429,7 +429,7 @@ echo $email_encoded;
 
 <div class="postula">
 <h1><a href="<?PHP echo site_url('postular/'.$v['ID']);?>">Postula a esta vacante</a></h1>
-<p>Comunica a la empresa que deseas ser considerado en la seleccion de personal de esta oferta de empleo</p>
+<p>Comunica a la empresa que deseas ser considerado en la selección de personal de esta oferta de empleo.</p>
 </div>
 
 
