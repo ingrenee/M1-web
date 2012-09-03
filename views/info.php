@@ -1,6 +1,10 @@
-
 <?PHP
+ 
 $info=$this->native_session->userdata('login_data_candidatos');
+
+_set_nivel_cv('informatica',substr_count($info['aptitudes'], ':1:'));
+_set_nivel_cv('idiomas',substr_count($info['aptitudes'], ':2:'));
+
 ?>
 <?PHP $this->load->view('candidatos/menu');?>
 
@@ -8,7 +12,7 @@ $info=$this->native_session->userdata('login_data_candidatos');
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="17%"><a href="<?PHP echo site_url('imagen');?>">
+    <td width="17%" valign="top"><a href="<?PHP echo site_url('imagen');?>">
     <img src="<?PHP _imagen($info['ID']);?>" class="avatar"></a></td>
     <td  valign="top">
     <div class="fila"><b>Nombres:</b>
@@ -24,8 +28,12 @@ $info=$this->native_session->userdata('login_data_candidatos');
 <div class="fila">
 <b>Email:</b> <?PHP echo $info['email'];?>
 </div>
-
-
+<div class="fila">
+<span><strong>Perfil completado al <?PHP echo $nivel=_nivel_cv()?>%: </strong></span>
+<div class="meter  nostripes">
+			<span style="width: <?PHP echo $nivel;?>%"></span>
+		</div>
+ </div>
 </td>
   </tr>
 </table>

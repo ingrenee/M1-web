@@ -37,11 +37,11 @@ Informacion b&aacute;sica
 
 <div class="fila">
 <div class="caption">Nombres</div>
-<?PHP  echo form_input('nombres',set_value('nombres'));?> <?PHP echo  form_error('nombres');?>
+<?PHP  echo form_input('nombres',set_value('nombres'),' class="caja largo"');?> <?PHP echo  form_error('nombres');?>
 </div>
 
 <div class="fila">
-<div class="caption">Apellidos</div> <?PHP  echo form_input('apellidos',set_value('apellidos'));?> <?PHP echo  form_error('apellidos');?>
+<div class="caption">Apellidos</div> <?PHP  echo form_input('apellidos',set_value('apellidos'),' class="caja largo"');?> <?PHP echo  form_error('apellidos');?>
 </div>
 
 <div class="fila">
@@ -71,7 +71,7 @@ Informacion b&aacute;sica
 Datos de acceso
 </div>
 <div class="fila">
-<div class="caption"> E-mail</div> <?PHP  echo form_input('email',set_value('email'));?> 
+<div class="caption"> E-mail</div> <?PHP  echo form_input('email',set_value('email'),' class="caja largo"');?> 
 <?PHP echo  form_error('email');?>
 </div>
 <div class="fila">

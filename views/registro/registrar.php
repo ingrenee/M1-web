@@ -9,11 +9,11 @@
 
 <div class="fila">
 <div class="caption">Nombre de la empresa </div>
-<?PHP  echo form_input('nombre',set_value('nombre'));?> <?PHP echo  form_error('nombre');?>
+<?PHP  echo form_input('nombre',set_value('nombre'),' class="caja largo"');?> <?PHP echo  form_error('nombre');?>
 </div>
 
 <div class="fila">
-<div class="caption">R.U.C</div> <?PHP  echo form_input('ruc',set_value('ruc'));?> <?PHP echo  form_error('ruc');?>
+<div class="caption">R.U.C</div> <?PHP  echo form_input('ruc',set_value('ruc'),' class="caja largo"');?> <?PHP echo  form_error('ruc');?>
 </div>
 
 <div class="fila">
@@ -57,7 +57,7 @@ $js2=' style=" display:none" disabled="disabled"';
 </div>
 
 <div class="fila">
-<div class="caption">Direcci&oacute;n</div> <?PHP  echo form_input('direccion',set_value('direccion'));?>
+<div class="caption">Direcci&oacute;n</div> <?PHP  echo form_input('direccion',set_value('direccion'),' class="caja largo"');?>
 <?PHP echo  form_error('direccion');?>
 </div>
 <div class="fila negro">
@@ -65,13 +65,13 @@ Datos del contacto
 </div>
 <div class="fila">
 <div class="caption">Nombres del contacto</div> <?PHP 
- echo form_input('encargado',set_value('encargado'));?>
+ echo form_input('encargado',set_value('encargado'),' class="caja largo"');?>
 <?PHP echo  form_error('encargado');?>
 </div>
 
 
 <div class="fila">
-<div class="caption">Cargo</div> <?PHP  echo form_input('cargo',set_value('cargo'));?>
+<div class="caption">Cargo</div> <?PHP  echo form_input('cargo',set_value('cargo'),' class="caja largo"');?>
 <?PHP echo  form_error('cargo');?>
 </div>
 
@@ -80,7 +80,7 @@ Datos del contacto
 Datos de acceso
 </div>
 <div class="fila">
-<div class="caption">E-mail</div> <?PHP  echo form_input('email_contacto',set_value('email_contacto'));?>
+<div class="caption">E-mail</div> <?PHP  echo form_input('email_contacto',set_value('email_contacto'),' class="caja largo"');?>
 <?PHP echo  form_error('email_contacto');?>
 </div>
 <div class="fila">
@@ -95,7 +95,7 @@ Datos de acceso
 
 
 
-<div class="fila2"><input type="submit" value="Registrarse">
+<div class="fila2"><input type="submit"  class="button large orange"value="Registrarse">
 </div>
 <?PHP echo form_close();?>
 </div>

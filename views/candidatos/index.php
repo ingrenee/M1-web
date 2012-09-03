@@ -34,7 +34,7 @@
 </div>
 
 <div class="area_2">
-<div  class="fila"><span><?PHP echo (int)$cv_formacion_estado;?> items registrados</span></div>
+<div  class="fila"><span>(<?PHP echo (int)$cv_formacion_estado;?>) items registrados</span></div>
 <div class="fila"><a href="<?PHP echo site_url('formacion');?>">+Agregar</a></div>
 </div>
 </div>
@@ -47,7 +47,7 @@
 </div>
 
 <div class="area_2">
-<div  class="fila"><span><?PHP echo (int)$cv_experiencia_estado;?> items registrados</span></div>
+<div  class="fila"><span>(<?PHP echo (int)$cv_experiencia_estado;?>) items registrados</span></div>
 <div class="fila"><a href="<?PHP echo site_url('experiencia');?>">+Agregar</a></div>
 </div>
 </div>
@@ -61,7 +61,7 @@
 </div>
 
 <div class="area_2">
-<div  class="fila"><span>&nbsp;</span></div>
+<div  class="fila"><span>(<?PHP echo $this->native_session->userdata('cv_inf_informatica');?>) items registrados</span></div>
 <div class="fila"><a href="<?PHP echo site_url('informatica');?>">+Agregar</a></div>
 </div>
 </div>
@@ -73,7 +73,8 @@
 </div>
 
 <div class="area_2">
-<div  class="fila"><span>&nbsp;</span></div>
+<div  class="fila"><span>(<?PHP echo $this->native_session->userdata('cv_inf_idiomas');?>) items registrados
+</span></div>
 <div class="fila"><a href="<?PHP echo site_url('idioma');?>">+Agregar</a></div>
 </div>
 </div>

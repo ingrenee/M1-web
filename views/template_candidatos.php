@@ -13,7 +13,7 @@
 <link href="<?PHP echo base_url('css/contenidos.css')?>" rel="stylesheet" type="text/css" />
 
 <link href="<?PHP echo base_url('css/candidatos.css')?>" rel="stylesheet" type="text/css" />
-
+<link href="<?PHP echo base_url('css/he-barra.css')?>" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?PHP echo base_url('html/jquery-1.7.min.js')?>"></script>
 <script type="text/javascript" src="<?PHP echo base_url('html/funciones.js')?>"></script>
 

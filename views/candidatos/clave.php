@@ -13,6 +13,9 @@
 <form method="post">
 <div class="formu2">
 
+<?PHP
+if(strlen($usuario['pass'])>4):
+?>
 <div class="fila">
 <div class="caption">
 Contraseña antigua
@@ -20,6 +23,8 @@ Contraseña antigua
 <?PHP echo form_password('pass',set_value('pass'));?>
 <?PHP echo form_error('pass');?>
 </div>
+<?PHP endif;?>
+
 
 <div class="fila">
 <div class="caption">
